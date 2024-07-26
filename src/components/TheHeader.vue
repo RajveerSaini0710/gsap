@@ -27,16 +27,17 @@ import { gsap } from "gsap";
 import { onMounted } from "vue";
 
 onMounted(() => {
-  gsap.to(".header", {
-    duration: 2,
-    opacity: 1,
-    ease: "power4.out",
+  gsap.from(".header", {
+    duration: 3,
+    opacity: 0,
+    y: -100,
+    ease: "elastic.out(1, 0.5)",
   });
 });
 </script>
 
 <style scoped>
 .header {
-  opacity: 0; /* Ensure header starts hidden */
+  opacity: 1; /* Ensure header starts hidden */
 }
 </style>
