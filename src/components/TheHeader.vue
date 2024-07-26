@@ -7,7 +7,9 @@
       <baseButton text="MOTION" :isLoading="false" />
       <baseButton text="ABOUT" :isLoading="false" />
     </div>
-    <div class="text-[32px] font-roslindale cursor-pointer">Giulia</div>
+    <div class="text-[32px] font-roslindale cursor-pointer">
+      G<span class="dot">i</span>ul<span class="dot">i</span>a
+    </div>
     <div class="flex items-center justify-between gap-2">
       <baseButton text="INSTAGRAM" :isLoading="false" />
       <baseButton text="EMAIL" :isLoading="false" />
@@ -27,17 +29,45 @@ import { gsap } from "gsap";
 import { onMounted } from "vue";
 
 onMounted(() => {
-  gsap.from(".header", {
-    duration: 2,
+  const tl = gsap.timeline();
+
+  tl.from(".header", {
+    duration: 1,
     opacity: 0,
     y: -100,
     ease: "elastic.out(1, 0.5)",
-  });
+  })
+    .from(
+      ".dot",
+      {
+        duration: 0.5,
+        y: -100,
+        opacity: 0,
+        ease: "power2.in",
+      },
+      "-=0.95"
+    )
+    .to(
+      ".dot",
+      {
+        duration: 0.5,
+        y: 0,
+        opacity: 1,
+        ease: "power2.out",
+        stagger: 0.1,
+      },
+      "-=0.95"
+    );
 });
 </script>
 
 <style scoped>
 .header {
   opacity: 1; /* Ensure header starts hidden */
+}
+.dot {
+  display: inline-block; /* Ensure it is treated as a block for animation */
+  transition: transform 0.5s ease; /* Optional: smooth transition */
+  opacity: 0;
 }
 </style>
