@@ -28,7 +28,7 @@ import { onMounted } from "vue";
 
 onMounted(() => {
   gsap.from(".header", {
-    duration: 3,
+    duration: 2,
     opacity: 0,
     y: -100,
     ease: "elastic.out(1, 0.5)",
