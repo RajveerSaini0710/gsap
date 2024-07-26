@@ -33,7 +33,7 @@ onMounted(() => {
   const tl = gsap.timeline();
 
   tl.from(".header", {
-    duration: 1,
+    duration: 2,
     opacity: 0,
     y: -100,
     ease: "elastic.out(1, 0.5)",
@@ -46,7 +46,7 @@ onMounted(() => {
         opacity: 0,
         ease: "power2.in",
       },
-      "-=0.95"
+      "-=1.8"
     )
     .to(
       ".dot",
@@ -57,7 +57,7 @@ onMounted(() => {
         ease: "power2.out",
         stagger: 0.1,
       },
-      "-=0.95"
+      "-=1.8"
     );
 });
 </script>
