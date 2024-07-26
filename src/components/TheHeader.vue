@@ -1,5 +1,7 @@
 <template>
-  <div class="flex justify-between items-center px-[64px] h-[64px]">
+  <div
+    class="flex justify-between items-center px-[64px] h-[64px] sticky top-0 backdrop-filter backdrop-blur-lg"
+  >
     <div class="flex items-center justify-between gap-2">
       <baseButton text="STILLS" :isLoading="false" />
       <baseButton text="MOTION" :isLoading="false" />
