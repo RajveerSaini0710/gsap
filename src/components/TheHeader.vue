@@ -7,7 +7,7 @@
       <baseButton text="MOTION" :isLoading="false" />
       <baseButton text="ABOUT" :isLoading="false" />
     </div>
-    <div class="text-[32px] font-roslindale">Giulia</div>
+    <div class="text-[32px] font-roslindale cursor-pointer">Giulia</div>
     <div class="flex items-center justify-between gap-2">
       <baseButton text="INSTAGRAM" :isLoading="false" />
       <baseButton text="EMAIL" :isLoading="false" />
