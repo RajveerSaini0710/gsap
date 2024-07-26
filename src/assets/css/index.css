@@ -1,0 +1,11 @@
+/* ./src/index.css */
+@font-face {
+  font-family: "roslindale";
+  src: url("../fonts/Roslindale/Roslindale_Desktop/Roslindale-DeckNarrowBold-Testing.otf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
