@@ -6,6 +6,7 @@ export default {
     extend: {
       fontFamily: {
         roslindale: ["roslindale", "sans-serif"],
+        mint: ["mint", "sans-serif"],
       },
     },
   },
