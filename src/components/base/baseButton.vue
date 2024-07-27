@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-import { computed, defineAsyncComponent } from "vue";
+import { computed } from "vue";
 
 const props = defineProps({
   isLoading: {
@@ -57,7 +57,7 @@ const props = defineProps({
 
 const buttonClasses = computed(() => {
   const baseClasses =
-    "flex items-center justify-center font-semibold text-white text-[12px] border border-white px-3 py-[6px] font-mint";
+    "flex items-center justify-center font-semibold  text-[12px] border  px-3 py-[6px] font-mint";
   const loadingClasses = props.isLoading
     ? "opacity-50 cursor-not-allowed"
     : "hover:opacity-75";

@@ -1,5 +1,5 @@
 <template>
-  <div class="header-card relative">
+  <div class="header-card relative flex items-center justify-center">
     <div
       class="absolute top-0 left-0 z-30 px-[64px] pb-[64px] font-roslindale w-full h-[720px] flex items-center justify-center"
     >
@@ -38,7 +38,7 @@
       </video>
     </div>
     <div
-      class="header-card-overlay absolute top-0 left-0 z-20 px-[64px] pb-[64px] w-full h-[720px]"
+      class="header-card-overlay absolute top-0 z-20 px-[64px] pb-[64px] w-[91%] h-[655px] flex items-center justify-center rounded-[34px]"
     ></div>
   </div>
 </template>
@@ -50,7 +50,6 @@ import { gsap } from "gsap";
 const title = ref(["GIULIA", "GARTNER", "PHOTOGRAPHER", "&", "FILMMAKER"]);
 
 onMounted(() => {
-  console.log(document.querySelectorAll(".header-card-title"));
   const tl = gsap.timeline();
   tl.from(".header-card", {
     opacity: 0,
