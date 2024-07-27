@@ -9,6 +9,7 @@
     </div>
     <div
       class="text-[32px] font-roslindale cursor-pointer w-full flex items-center justify-center"
+      @click="logoClick"
     >
       G<span class="dot">i</span>ul<span class="dot">i</span>a
     </div>
@@ -31,6 +32,9 @@ import baseButton from "./base/baseButton.vue";
 import { gsap } from "gsap";
 import { onMounted } from "vue";
 import { useDark, useToggle } from "@vueuse/core";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
@@ -67,6 +71,10 @@ onMounted(() => {
       "-=1.8"
     );
 });
+
+const logoClick = () => {
+  router.push("/");
+};
 </script>
 
 <style scoped>
