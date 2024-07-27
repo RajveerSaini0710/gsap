@@ -2,7 +2,7 @@
   <button
     :class="buttonClasses"
     :disabled="isLoading"
-    class="dark:border-white border-[#234a76]"
+    class="dark:border-white border-[#234a76] overflow-hidden"
   >
     <span v-if="isLoading" class="loader"> </span>
     <span v-if="icon && iconPosition === 'left'" :class="icon" class="mr-2">

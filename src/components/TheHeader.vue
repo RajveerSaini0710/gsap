@@ -43,7 +43,6 @@ const router = useRouter();
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
-const darkModeText = ref(null);
 
 onMounted(() => {
   const tl = gsap.timeline();
@@ -80,18 +79,33 @@ onMounted(() => {
 
 const handleToggleDark = () => {
   toggleDark();
-  gsap.from(".darkModeText", {
-    duration: 1,
-    opacity: 0,
-    y: -100,
-    ease: "elastic.out(1, 0.5)",
-  });
-  gsap.to(".darkModeText", {
-    duration: 1,
-    opacity: 1,
-    y: 0,
-    ease: "elastic.out(1, 0.5)",
-  });
+  if (isDark.value === true) {
+    gsap.from(".darkModeText", {
+      duration: 1,
+      opacity: 0,
+      y: -70,
+      ease: "expo.out",
+    });
+    gsap.to(".darkModeText", {
+      duration: 1,
+      opacity: 1,
+      y: 0,
+      ease: "expo.out",
+    });
+  } else {
+    gsap.from(".darkModeText", {
+      duration: 1,
+      opacity: 0,
+      y: 70,
+      ease: "expo.out",
+    });
+    gsap.to(".darkModeText", {
+      duration: 1,
+      opacity: 1,
+      y: 0,
+      ease: "expo.out",
+    });
+  }
 };
 
 const logoClick = () => {
