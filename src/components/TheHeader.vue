@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex justify-between items-center px-[64px] h-[64px] sticky top-0 backdrop-filter backdrop-blur-lg header"
+    class="w-full flex justify-between items-center px-[64px] h-[64px] fixed top-0 backdrop-filter backdrop-blur-2xl header"
   >
     <div class="flex items-center justify-between gap-2">
       <baseButton text="STILLS" :isLoading="false" />
