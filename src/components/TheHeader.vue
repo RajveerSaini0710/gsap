@@ -1,6 +1,7 @@
 <template>
   <div
-    class="w-full flex justify-between items-center px-[64px] h-[64px] fixed top-0 backdrop-filter backdrop-blur-2xl header"
+    class="w-full flex justify-between items-center px-[64px] h-[64px] fixed top-0 backdrop-filter backdrop-blur-lg header"
+    :class="isDark ? 'header-bg-black' : 'header-bg-white'"
   >
     <div class="flex items-center justify-between gap-2">
       <baseButton text="STILLS" :isLoading="false" />
@@ -121,5 +122,12 @@ const logoClick = () => {
   display: inline-block;
   transition: transform 0.5s ease;
   opacity: 0;
+}
+.header-bg-white {
+  background-color: rgb(228 226 235 / 60%);
+}
+
+.header-bg-black {
+  background-color: rgb(22 23 25 / 50%);
 }
 </style>
