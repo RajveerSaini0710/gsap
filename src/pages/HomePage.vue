@@ -1,5 +1,5 @@
 <template>
-  <div class="header-card relative flex items-center justify-center top-[10px]">
+  <div class="header-card relative flex items-center justify-center top-[5px]">
     <div
       class="absolute top-0 left-0 z-30 px-[64px] pb-[64px] font-roslindale w-full h-[720px] flex items-center justify-center"
     >

@@ -73,7 +73,7 @@ onMounted(() => {
 });
 
 const logoClick = () => {
-  router.push("/");
+  router.push("/home");
 };
 </script>
 
