@@ -15,7 +15,9 @@
         class="max-w-fit"
       />
     </span>
-    <span v-if="!isLoading && text">{{ text }}</span>
+    <slot name="buttonContent">
+      <span v-if="!isLoading && text">{{ text }}</span>
+    </slot>
     <span v-if="icon && iconPosition === 'right'" :class="icon" class="ml-2">
       <img
         width="18"

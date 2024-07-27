@@ -16,13 +16,18 @@
     <div class="flex items-center justify-between gap-2">
       <baseButton text="INSTAGRAM" :isLoading="false" />
       <baseButton text="EMAIL" :isLoading="false" />
+
       <baseButton
-        text="F/24"
         :icon="{ name: 'appeture' }"
         iconPosition="right"
-        @click="toggleDark()"
+        @click="handleToggleDark"
         :isLoading="false"
-      />
+        class="darkModeToggle"
+      >
+        <template #buttonContent>
+          <span class="darkModeText">{{ isDark ? "F/24" : "F/1.4" }}</span>
+        </template>
+      </baseButton>
     </div>
   </div>
 </template>
@@ -30,7 +35,7 @@
 <script setup>
 import baseButton from "./base/baseButton.vue";
 import { gsap } from "gsap";
-import { onMounted } from "vue";
+import { onMounted, ref, watch } from "vue";
 import { useDark, useToggle } from "@vueuse/core";
 import { useRouter } from "vue-router";
 
@@ -38,6 +43,7 @@ const router = useRouter();
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
+const darkModeText = ref(null);
 
 onMounted(() => {
   const tl = gsap.timeline();
@@ -71,6 +77,22 @@ onMounted(() => {
       "-=1.8"
     );
 });
+
+const handleToggleDark = () => {
+  toggleDark();
+  gsap.from(".darkModeText", {
+    duration: 1,
+    opacity: 0,
+    y: -100,
+    ease: "elastic.out(1, 0.5)",
+  });
+  gsap.to(".darkModeText", {
+    duration: 1,
+    opacity: 1,
+    y: 0,
+    ease: "elastic.out(1, 0.5)",
+  });
+};
 
 const logoClick = () => {
   router.push("/home");
