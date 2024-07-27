@@ -47,21 +47,22 @@ onMounted(() => {
     .from(
       ".dot",
       {
-        duration: 0.5,
-        y: -100,
+        duration: 1,
+        y: -120,
         opacity: 0,
         ease: "power2.in",
+        stagger: 0.25,
       },
       "-=1.8"
     )
     .to(
       ".dot",
       {
-        duration: 0.5,
+        duration: 1,
         y: 0,
         opacity: 1,
         ease: "power2.out",
-        stagger: 0.1,
+        stagger: 0.25,
       },
       "-=1.8"
     );
