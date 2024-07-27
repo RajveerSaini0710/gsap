@@ -3,21 +3,23 @@
     <span v-if="isLoading" class="loader"> </span>
     <span v-if="icon && iconPosition === 'left'" :class="icon" class="mr-2">
       <img
-        width="24"
-        height="24"
+        width="18"
+        height="18"
         v-if="icon.name"
         :src="getIconSrc(icon.name)"
         alt="icon"
+        class="max-w-fit"
       />
     </span>
     <span v-if="!isLoading && text">{{ text }}</span>
     <span v-if="icon && iconPosition === 'right'" :class="icon" class="ml-2">
       <img
-        width="24"
-        height="24"
+        width="18"
+        height="18"
         v-if="icon.name"
         :src="getIconSrc(icon.name)"
         alt="icon"
+        class="max-w-fit"
       />
     </span>
   </button>
