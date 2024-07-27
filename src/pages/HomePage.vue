@@ -1,12 +1,16 @@
 <template>
   <div class="header-card relative">
     <div
-      class="header-card-title absolute top-0 left-0 z-30 px-[64px] pb-[64px] font-roslindale w-full h-[720px] flex items-center justify-center"
+      class="absolute top-0 left-0 z-30 px-[64px] pb-[64px] font-roslindale w-full h-[720px] flex items-center justify-center"
     >
       <div
         class="max-w-[900px] flex items-center justify-center gap-3 flex-wrap leading-[60px]"
       >
-        <div v-for="(word, index) in title" :key="index" class="w-fit">
+        <div
+          v-for="(word, index) in title"
+          :key="index"
+          class="w-fit header-card-title"
+        >
           <span class="text-[90px] font-bold">{{ word }}</span>
         </div>
       </div>
@@ -40,8 +44,52 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+import { gsap } from "gsap";
+
 const title = ref(["GIULIA", "GARTNER", "PHOTOGRAPHER", "&", "FILMMAKER"]);
+
+onMounted(() => {
+  console.log(document.querySelectorAll(".header-card-title"));
+  const tl = gsap.timeline();
+  tl.from(".header-card", {
+    opacity: 0,
+    duration: 1.5,
+    y: 500,
+    backdropFilter: "blur(100px)",
+    scale: 0,
+    ease: "circ.out",
+  }).to(".header-card", {
+    opacity: 1,
+    duration: 1.5,
+    y: 0,
+    backdropFilter: "blur(0px)",
+    scale: 1,
+    ease: "circ.out",
+  });
+
+  tl.from(
+    ".header-card-title",
+    {
+      opacity: 0,
+      duration: 1,
+      y: 100,
+      ease: "circ.out",
+      stagger: 0.3,
+    },
+    "-=2.4"
+  ).to(
+    ".header-card-title",
+    {
+      opacity: 1,
+      duration: 1,
+      y: 0,
+      ease: "circ.out",
+      stagger: 0.3,
+    },
+    "-=2.4"
+  );
+});
 </script>
 
 <style scoped>
