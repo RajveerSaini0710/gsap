@@ -10,6 +10,10 @@ import TheHeader from "./components/TheHeader.vue";
 </template>
 
 <style>
+::-webkit-scrollbar {
+  display: none;
+}
+
 html.dark {
   color-scheme: dark;
 }
