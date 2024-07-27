@@ -115,11 +115,11 @@ const logoClick = () => {
 
 <style scoped>
 .header {
-  opacity: 1; /* Ensure header starts hidden */
+  opacity: 1;
 }
 .dot {
-  display: inline-block; /* Ensure it is treated as a block for animation */
-  transition: transform 0.5s ease; /* Optional: smooth transition */
+  display: inline-block;
+  transition: transform 0.5s ease;
   opacity: 0;
 }
 </style>
