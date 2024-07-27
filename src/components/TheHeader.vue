@@ -7,9 +7,10 @@
       <baseButton text="MOTION" :isLoading="false" />
       <baseButton text="ABOUT" :isLoading="false" />
     </div>
-    <div class="text-[32px] font-roslindale cursor-pointer">
+    <div
+      class="text-[32px] font-roslindale cursor-pointer w-full flex items-center justify-center"
+    >
       G<span class="dot">i</span>ul<span class="dot">i</span>a
-      <span class="animate-circle">...</span>
     </div>
     <div class="flex items-center justify-between gap-2">
       <baseButton text="INSTAGRAM" :isLoading="false" />
@@ -69,9 +70,6 @@ onMounted(() => {
 .dot {
   display: inline-block; /* Ensure it is treated as a block for animation */
   transition: transform 0.5s ease; /* Optional: smooth transition */
-  opacity: 0;
-}
-.animate-circle {
   opacity: 0;
 }
 </style>
