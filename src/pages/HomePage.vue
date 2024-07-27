@@ -9,7 +9,7 @@
         <div
           v-for="(word, index) in title"
           :key="index"
-          class="w-fit header-card-title"
+          class="w-fit header-card-title text-white"
         >
           <span class="text-[90px] font-bold">{{ word }}</span>
         </div>
