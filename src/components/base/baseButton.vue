@@ -1,5 +1,9 @@
 <template>
-  <button :class="buttonClasses" :disabled="isLoading">
+  <button
+    :class="buttonClasses"
+    :disabled="isLoading"
+    class="dark:border-white border-[#234a76]"
+  >
     <span v-if="isLoading" class="loader"> </span>
     <span v-if="icon && iconPosition === 'left'" :class="icon" class="mr-2">
       <img
@@ -19,7 +23,7 @@
         v-if="icon.name"
         :src="getIconSrc(icon.name)"
         alt="icon"
-        class="max-w-fit"
+        class="max-w-fit bg-[#234a76] rounded-full"
       />
     </span>
   </button>

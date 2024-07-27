@@ -1,39 +1,19 @@
 <script setup>
-import { ref, watch } from "vue";
 import TheHeader from "./components/TheHeader.vue";
-import { commonVariables } from "./assets/variables/commonVariables";
-
-const theme = ref("dark");
-
-const handleThemeUpdate = (newTheme) => {
-  theme.value = newTheme; // Update the theme based on the emitted value
-};
-
-watch(
-  () => theme.value,
-  (newTheme) => {
-    document.body.className = newTheme;
-    commonVariables.theme = newTheme;
-  },
-  { immediate: true }
-);
 </script>
 
 <template>
-  <TheHeader :class="theme" @update-theme="handleThemeUpdate" />
-  <router-view v-slot="slotProps" :class="theme">
-    <component :is="slotProps.Component" :class="theme"></component>
+  <TheHeader />
+  <router-view v-slot="slotProps">
+    <component :is="slotProps.Component"></component>
   </router-view>
 </template>
 
 <style>
-.dark {
-  background-color: #161719;
-  color: #ffffff;
+html.dark {
+  color-scheme: dark;
 }
-
-.light {
-  background-color: #e4e2eb;
-  color: #234a76;
+body {
+  @apply bg-[#e4e2eb] dark:bg-[#161719] dark:text-[#ffffff] text-[#234a76];
 }
 </style>

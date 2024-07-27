@@ -19,7 +19,7 @@
         text="F/24"
         :icon="{ name: 'appeture' }"
         iconPosition="right"
-        @click="toggleTheme"
+        @click="toggleDark()"
         :isLoading="false"
       />
     </div>
@@ -29,16 +29,11 @@
 <script setup>
 import baseButton from "./base/baseButton.vue";
 import { gsap } from "gsap";
-import { onMounted, ref } from "vue";
+import { onMounted } from "vue";
+import { useDark, useToggle } from "@vueuse/core";
 
-const emit = defineEmits(["updateTheme"]);
-
-const theme = ref("dark");
-
-const toggleTheme = () => {
-  theme.value = theme.value === "dark" ? "light" : "dark";
-  emit("updateTheme", theme.value);
-};
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
 
 onMounted(() => {
   const tl = gsap.timeline();
