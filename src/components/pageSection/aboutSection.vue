@@ -42,7 +42,7 @@
         </div>
       </div>
       <div class="mb-[48px]">
-        <p class="text-center">
+        <p class="text-center font-mint">
           Giulia Gartner () is an outdoor, travel, and commercial photographer,
           filmmaker, and storyteller from the Dolomites in northern Italy. Her
           work focuses on capturing wild and rugged landscapes with a vivid
