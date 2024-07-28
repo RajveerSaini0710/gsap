@@ -41,8 +41,27 @@
           />
         </div>
       </div>
-      <div></div>
-      <div></div>
+      <div class="mb-[48px]">
+        <p class="text-center">
+          Giulia Gartner () is an outdoor, travel, and commercial photographer,
+          filmmaker, and storyteller from the Dolomites in northern Italy. Her
+          work focuses on capturing wild and rugged landscapes with a vivid
+          color palette and dreamy elements. Her love for photography has
+          spilled over into filmmaking which is one of the main creative outlets
+          she pursues today.
+        </p>
+      </div>
+      <div class="flex justify-center">
+        <BaseButton
+          text="READ MY STORY"
+          link="https://www.giuliagartner.com/about"
+          class="bg-[#234a76] text-[#ffffff] text-[11px]"
+        />
+      </div>
     </div>
   </div>
 </template>
+
+<script setup>
+import BaseButton from "../base/baseButton.vue";
+</script>
