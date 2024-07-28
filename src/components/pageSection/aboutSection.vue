@@ -32,7 +32,7 @@
         <span class="three-dots" v-for="(dot, index) in dots" :key="index">{{
           dot
         }}</span>
-        <div class="ml-[20px] about-title-img-1">
+        <div class="ml-[20px] about-title-img-3">
           <img
             src="https://assets-global.website-files.com/60db5e59f76ae577e9f50d42/61e939de360c7c91700e9743_Photo%20-%20Dolomites%20-%203.jpg"
             alt="img3"
@@ -97,6 +97,42 @@ const threeDotAnimation = () => {
 
 onMounted(() => {
   threeDotAnimation();
+
+  const img1 = document.querySelector(".about-title-img-1");
+  const img2 = document.querySelector(".about-title-img-2");
+  const img3 = document.querySelector(".about-title-img-3");
+
+  const createAnimationTimeline = (img) => {
+    const imgTl = gsap.timeline({ paused: true });
+    imgTl.fromTo(
+      img,
+      { scale: 1 },
+      {
+        duration: 0.8,
+        scale: 2,
+        rotate: img === img1 || img === img3 ? -10 : 10,
+        ease: "back.out",
+      }
+    );
+
+    return imgTl;
+  };
+
+  const img1Tl = createAnimationTimeline(img1);
+  const img2Tl = createAnimationTimeline(img2);
+  const img3Tl = createAnimationTimeline(img3);
+
+  // Add event listeners for img1
+  img1.addEventListener("mouseenter", () => img1Tl.play());
+  img1.addEventListener("mouseleave", () => img1Tl.reverse());
+
+  // Add event listeners for img2
+  img2.addEventListener("mouseenter", () => img2Tl.play());
+  img2.addEventListener("mouseleave", () => img2Tl.reverse());
+
+  // Add event listeners for img3
+  img3.addEventListener("mouseenter", () => img3Tl.play());
+  img3.addEventListener("mouseleave", () => img3Tl.reverse());
 });
 </script>
 
