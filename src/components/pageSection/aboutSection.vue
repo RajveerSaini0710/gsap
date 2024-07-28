@@ -57,7 +57,7 @@
         <BaseButton
           text="READ MY STORY"
           link="https://www.giuliagartner.com/about"
-          class="bg-[#234a76] text-[#ffffff] text-[11px]"
+          class="dark:text-[#ffffff] text-[11px] text-[#234a76]"
         />
       </div>
     </div>
@@ -79,7 +79,7 @@ const threeDotAnimation = () => {
     { y: 0 },
     {
       duration: 0.8,
-      y: -8,
+      y: -10,
       stagger: 0.2,
       ease: "power1.inOut",
     }
