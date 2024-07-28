@@ -28,9 +28,11 @@
           />
         </div>
         <span>where it all &nbsp;</span>
-        <span>began</span>
-        <span>... &nbsp;</span>
-        <div class="mr-[16px]">
+        <span>began&nbsp;</span>
+        <span class="three-dots" v-for="(dot, index) in dots" :key="index">{{
+          dot
+        }}</span>
+        <div class="ml-[20px]">
           <img
             src="https://assets-global.website-files.com/60db5e59f76ae577e9f50d42/61e939de360c7c91700e9743_Photo%20-%20Dolomites%20-%203.jpg"
             alt="img3"
@@ -64,4 +66,38 @@
 
 <script setup>
 import BaseButton from "../base/baseButton.vue";
+import { gsap } from "gsap";
+import { onMounted, ref } from "vue";
+
+const dots = ref([".", ".", ".", " "]);
+
+const threeDotAnimation = () => {
+  const tl = gsap.timeline({ repeat: -1 });
+
+  tl.fromTo(
+    ".three-dots",
+    { y: 0 },
+    {
+      duration: 0.8,
+      y: -8,
+      stagger: 0.2,
+      ease: "power1.inOut",
+    }
+  ).to(
+    ".three-dots",
+    {
+      duration: 0.8,
+      y: 0,
+      stagger: 0.2,
+      ease: "power1.inOut",
+    },
+    "-=0.8"
+  );
+};
+
+onMounted(() => {
+  threeDotAnimation();
+});
 </script>
+
+<style scoped></style>
