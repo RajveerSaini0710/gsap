@@ -2,12 +2,14 @@
   <div>
     <HeaderCard />
     <AboutSection />
+    <ArticleSection />
   </div>
 </template>
 
 <script setup>
 import HeaderCard from "../components/pageSection/headerCard.vue";
 import AboutSection from "../components/pageSection/aboutSection.vue";
+import ArticleSection from "../components/pageSection/articleSection.vue";
 </script>
 
 <style scoped></style>
