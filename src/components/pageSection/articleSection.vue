@@ -33,7 +33,7 @@
         />
       </div>
 
-      <div class="pb-[30px] flex items-center justify-center">
+      <div class="pb-[64px] flex items-center justify-center">
         <BaseColorPicker :colorData="colorData" />
       </div>
     </div>
