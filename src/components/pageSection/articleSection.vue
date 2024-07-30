@@ -68,7 +68,7 @@ import BaseButton from "../base/baseButton.vue";
 import BaseColorPicker from "../base/baseColorPicker.vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { onMounted } from "vue";
+import { onMounted, onBeforeUnmount } from "vue";
 import { articleSectionData } from "../../assets/variables/commonVariables.js";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -107,5 +107,9 @@ onMounted(() => {
       }
     );
   });
+});
+
+onBeforeUnmount(() => {
+  ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 });
 </script>
