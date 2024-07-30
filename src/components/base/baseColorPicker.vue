@@ -5,7 +5,7 @@
     <div
       v-for="(color, index) in props.colorData"
       :key="index"
-      class="flex items-center justify-center w-1/5 rounded-full color-box"
+      class="flex items-center justify-center w-1/5 rounded-full color-box cursor-pointer"
       :style="`background-color: ${color};`"
       @mouseenter="animateIn(index)"
       @mouseleave="animateOut(index)"
@@ -14,8 +14,9 @@
       <div
         class="sigle-color-picker-text text-center text-[8px] font-mint z-10 opacity-0"
         ref="colorTexts"
+        @click="copyColor(index)"
       >
-        {{ color }}
+        {{ copiedIndex === index ? "Copied" : color }}
       </div>
     </div>
   </div>
@@ -34,6 +35,7 @@ const props = defineProps({
 
 const colorBoxes = ref([]);
 const colorTexts = ref([]);
+const copiedIndex = ref(null);
 
 const animateIn = (index) => {
   gsap.to(colorBoxes.value[index], {
@@ -67,6 +69,16 @@ const animateOut = (index) => {
     zIndex: 10,
     ease: "back.out",
   });
+};
+
+const copyColor = (index) => {
+  const color = props.colorData[index];
+  navigator.clipboard.writeText(color);
+  copiedIndex.value = index;
+
+  setTimeout(() => {
+    copiedIndex.value = null;
+  }, 1000);
 };
 </script>
 
