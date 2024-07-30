@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full flex justify-between items-center px-[64px] h-[64px] fixed top-0 backdrop-filter backdrop-blur-lg header"
+    class="w-full flex justify-between items-center px-[64px] h-[64px] fixed top-0 backdrop-filter backdrop-blur-lg header z-[100]"
     :class="isDark ? 'header-bg-black' : 'header-bg-white'"
   >
     <div class="flex items-center justify-between gap-2">
