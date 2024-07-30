@@ -91,5 +91,6 @@ const copyColor = (index) => {
 
 .sigle-color-picker-text {
   transition: opacity 0.3s ease;
+  mix-blend-mode: difference;
 }
 </style>
