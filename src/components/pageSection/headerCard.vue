@@ -6,14 +6,14 @@
       class="absolute top-0 left-0 z-30 px-[64px] pb-[64px] font-roslindale w-full h-[720px] flex items-center justify-center"
     >
       <div
-        class="max-w-[900px] flex items-center justify-center gap-3 flex-wrap leading-[60px]"
+        class="max-w-[900px] flex items-center justify-center gap-6 flex-wrap leading-[60px]"
       >
         <div
           v-for="(word, index) in title"
           :key="index"
           class="w-fit header-card-title text-white"
         >
-          <span class="text-[90px] font-bold">{{ word }}</span>
+          <span class="text-[80px] font-bold">{{ word }}</span>
         </div>
       </div>
     </div>
@@ -49,7 +49,16 @@
 import { ref, onMounted } from "vue";
 import { gsap } from "gsap";
 
-const title = ref(["GIULIA", "GARTNER", "PHOTOGRAPHER", "&", "FILMMAKER"]);
+const title = ref([
+  "🦾",
+  "NOTHING",
+  "TOO",
+  "HIGH",
+  "NOTHING",
+  "TOO",
+  "HEAVY",
+  ".",
+]);
 
 onMounted(() => {
   const tl = gsap.timeline();

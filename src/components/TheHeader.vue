@@ -12,7 +12,10 @@
       class="text-[32px] font-roslindale cursor-pointer w-full flex items-center justify-center"
       @click="logoClick"
     >
-      G<span class="dot">i</span>ul<span class="dot">i</span>a
+      Sa<span class="dot">i</span>n<span class="dot">i</span>&nbsp;L<span
+        class="dot"
+        >i</span
+      >fters
     </div>
     <div class="flex items-center justify-between gap-2">
       <baseButton text="INSTAGRAM" :isLoading="false" />
