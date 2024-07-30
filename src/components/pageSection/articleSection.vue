@@ -1,7 +1,16 @@
 <template>
   <div
-    class="w-full h-full flex items-center justify-center flex-col pt-[30px]"
+    class="w-full h-[85vh] flex items-center justify-center flex-col pt-[30px] relative"
   >
+    <div
+      class="w-full h-full bg-cover flex items-start justify-center absolute z-40"
+    >
+      <img
+        src="https://assets-global.website-files.com/60eeb025115a75902b86a796/647e3cc83822b06137a15c00_Header%201%20Left.jpg"
+        alt="left img"
+        class="max-w-[469px] max-h-[767px] rounded-[32px]"
+      />
+    </div>
     <div class="max-w-[600px] w-[50vw] h-full text-center px-[64px]">
       <div
         class="font-mint font-bold dark:text-white text-[#234a76] flex items-center justify-center gap-6"
@@ -36,6 +45,15 @@
       <div class="pb-[64px] flex items-center justify-center">
         <BaseColorPicker :colorData="colorData" />
       </div>
+    </div>
+    <div
+      class="w-full h-full bg-cover flex items-start justify-center absolute z-30"
+    >
+      <img
+        src="https://assets-global.website-files.com/60eeb025115a75902b86a796/647e3ccc6c2ce83328c9b669_Header%202%20Right.jpg"
+        alt="left img"
+        class="max-w-[469px] max-h-[767px] rounded-[32px]"
+      />
     </div>
   </div>
 </template>
