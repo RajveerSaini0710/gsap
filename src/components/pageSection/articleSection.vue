@@ -1,6 +1,8 @@
 <template>
-  <div class="w-full h-full flex items-center justify-center flex-col">
-    <div class="pt-[24px] max-w-[600px] w-[50vw] h-full text-center px-[64px]">
+  <div
+    class="w-full h-full flex items-center justify-center flex-col pt-[30px]"
+  >
+    <div class="max-w-[600px] w-[50vw] h-full text-center px-[64px]">
       <div
         class="font-mint font-bold dark:text-white text-[#234a76] flex items-center justify-center gap-6"
       >
@@ -19,7 +21,7 @@
         </svg>
         <span>GREENLAND</span>
       </div>
-      <div class="py-[64px] flex flex-col items-center justify-center">
+      <div class="py-[128px] flex flex-col items-center justify-center">
         <p
           class="text-[98px] text-[#234a76] font-bold dark:text-white font-roslindale leading-[100px] pb-6"
         >
@@ -31,7 +33,7 @@
         />
       </div>
 
-      <div class="pb-[24px] flex items-center justify-center">
+      <div class="pb-[30px] flex items-center justify-center">
         <BaseColorPicker :colorData="colorData" />
       </div>
     </div>
