@@ -2,7 +2,7 @@ import { ref } from "vue";
 
 export const commonVariables = ref({});
 
-export const articleSectionData1 = ref([
+export const articleSectionData = ref([
   {
     image: {
       image1:
