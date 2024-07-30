@@ -1,12 +1,14 @@
 <template>
   <div
     class="w-full h-dvh flex items-center justify-center flex-col pt-[30px] relative article-container"
+    v-for="(article, index) in articleSectionData"
+    :key="index"
   >
     <div
-      class="w-full h-full bg-cover flex items-start justify-center absolute z-40 article-img-1"
+      class="h-full bg-cover flex items-start justify-center absolute z-40 article-img-1"
     >
       <img
-        src="https://assets-global.website-files.com/60eeb025115a75902b86a796/647e3cc83822b06137a15c00_Header%201%20Left.jpg"
+        :src="article.image.image1"
         alt="left img"
         class="max-w-[469px] max-h-[767px] rounded-[32px] h-[650px]"
       />
@@ -15,7 +17,7 @@
       <div
         class="font-mint font-bold dark:text-white text-[#234a76] flex items-center justify-center gap-6"
       >
-        <span>MARCH 2023</span>
+        <span>{{ article.date }}</span>
         <svg
           width="16"
           height="8"
@@ -28,29 +30,29 @@
             fill="currentcolor"
           ></path>
         </svg>
-        <span>GREENLAND</span>
+        <span>{{ article.place }}</span>
       </div>
       <div class="py-[128px] flex flex-col items-center justify-center">
         <p
           class="text-[98px] text-[#234a76] font-bold dark:text-white font-roslindale leading-[100px] pb-6"
         >
-          Visit Greenland
+          {{ article.title }}
         </p>
         <BaseButton
-          text="SEE CASE STUDY"
+          :text="article.buttonText"
           class="dark:text-[#ffffff] text-[11px] text-[#234a76]"
         />
       </div>
 
       <div class="pb-[64px] flex items-center justify-center">
-        <BaseColorPicker :colorData="colorData" />
+        <BaseColorPicker :colorData="article.colorData" />
       </div>
     </div>
     <div
-      class="w-full h-full bg-cover flex items-start justify-center absolute z-30 article-img-2"
+      class="h-full bg-cover flex items-start justify-center absolute z-30 article-img-2"
     >
       <img
-        src="https://assets-global.website-files.com/60eeb025115a75902b86a796/647e3ccc6c2ce83328c9b669_Header%202%20Right.jpg"
+        :src="article.image.image2"
         alt="left img"
         class="max-w-[469px] max-h-[767px] rounded-[32px] h-[650px]"
       />
@@ -64,6 +66,7 @@ import BaseColorPicker from "../base/baseColorPicker.vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { onMounted } from "vue";
+import { articleSectionData } from "../../assets/variables/commonVariables.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -100,6 +103,4 @@ onMounted(() => {
     }
   );
 });
-
-const colorData = ["#214356", "#8DB2C3", "#E7E7C1", "#989598", "#445F88"];
 </script>
