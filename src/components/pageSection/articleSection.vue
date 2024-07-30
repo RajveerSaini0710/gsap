@@ -1,11 +1,13 @@
 <template>
   <div
-    class="w-full h-dvh flex items-center justify-center flex-col pt-[30px] relative article-container"
+    class="w-full h-dvh flex items-center justify-center flex-col pt-[30px] relative pb-[64px]"
+    :class="`article-container${index}`"
     v-for="(article, index) in articleSectionData"
     :key="index"
   >
     <div
-      class="h-full bg-cover flex items-start justify-center absolute z-40 article-img-1"
+      class="h-full bg-cover flex items-start justify-center absolute z-40"
+      :class="`article-img-1${index}`"
     >
       <img
         :src="article.image.image1"
@@ -49,7 +51,8 @@
       </div>
     </div>
     <div
-      class="h-full bg-cover flex items-start justify-center absolute z-30 article-img-2"
+      class="h-full bg-cover flex items-start justify-center absolute z-30"
+      :class="`article-img-2${index}`"
     >
       <img
         :src="article.image.image2"
@@ -71,36 +74,40 @@ import { articleSectionData } from "../../assets/variables/commonVariables.js";
 gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
-  const tl = gsap.timeline();
-  tl.fromTo(
-    ".article-img-1",
-    { x: 0, rotate: 0 },
-    {
-      scrollTrigger: {
-        trigger: ".article-container",
-        start: "top 100%",
-        end: "top 10%",
-        scrub: true,
-      },
-      x: -500,
-      rotate: -5,
-      duration: 1,
-    }
-  );
-  tl.fromTo(
-    ".article-img-2",
-    { x: 0, rotate: 0 },
-    {
-      scrollTrigger: {
-        trigger: ".article-container",
-        start: "top 100%",
-        end: "top 10%",
-        scrub: true,
-      },
-      x: 500,
-      rotate: 5,
-      duration: 1,
-    }
-  );
+  articleSectionData.value.forEach((article, index) => {
+    const tl = gsap.timeline();
+    tl.fromTo(
+      `.article-img-1${index}`,
+      { x: 0, rotate: 0 },
+      {
+        scrollTrigger: {
+          trigger: `.article-container${index}`,
+          start: "8% 100%",
+          end: "8% 10%",
+          scrub: true,
+          markers: true,
+        },
+        x: -500,
+        rotate: -5,
+        duration: 1,
+      }
+    );
+    tl.fromTo(
+      `.article-img-2${index}`,
+      { x: 0, rotate: 0 },
+      {
+        scrollTrigger: {
+          trigger: `.article-container${index}`,
+          start: "8% 100%",
+          end: "8% 10%",
+          scrub: true,
+          markers: true,
+        },
+        x: 500,
+        rotate: 5,
+        duration: 1,
+      }
+    );
+  });
 });
 </script>
