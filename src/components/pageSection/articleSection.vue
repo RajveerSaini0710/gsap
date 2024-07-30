@@ -1,9 +1,9 @@
 <template>
   <div
-    class="w-full h-[85vh] flex items-center justify-center flex-col pt-[30px] relative"
+    class="w-full h-dvh flex items-center justify-center flex-col pt-[30px] relative article-container"
   >
     <div
-      class="w-full h-full bg-cover flex items-start justify-center absolute z-40"
+      class="w-full h-full bg-cover flex items-start justify-center absolute z-40 article-img-1"
     >
       <img
         src="https://assets-global.website-files.com/60eeb025115a75902b86a796/647e3cc83822b06137a15c00_Header%201%20Left.jpg"
@@ -47,7 +47,7 @@
       </div>
     </div>
     <div
-      class="w-full h-full bg-cover flex items-start justify-center absolute z-30"
+      class="w-full h-full bg-cover flex items-start justify-center absolute z-30 article-img-2"
     >
       <img
         src="https://assets-global.website-files.com/60eeb025115a75902b86a796/647e3ccc6c2ce83328c9b669_Header%202%20Right.jpg"
@@ -61,6 +61,47 @@
 <script setup>
 import BaseButton from "../base/baseButton.vue";
 import BaseColorPicker from "../base/baseColorPicker.vue";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { onMounted } from "vue";
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+  const tl = gsap.timeline();
+  tl.fromTo(
+    ".article-img-1",
+    { x: 0 },
+    {
+      scrollTrigger: {
+        trigger: ".article-container",
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+        markers: true,
+      },
+      x: -500,
+      opacity: 1,
+      duration: 1,
+    }
+  );
+  tl.fromTo(
+    ".article-img-2",
+    { x: 0 },
+    {
+      scrollTrigger: {
+        trigger: ".article-container",
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+        markers: true,
+      },
+      x: 500,
+      opacity: 1,
+      duration: 1,
+    }
+  );
+});
 
 const colorData = ["#214356", "#8DB2C3", "#E7E7C1", "#989598", "#445F88"];
 </script>
