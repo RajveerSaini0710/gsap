@@ -12,7 +12,7 @@
       class="text-[32px] font-roslindale cursor-pointer w-full flex items-center justify-center"
       @click="logoClick"
     >
-      Sa<span class="dot">i</span>n<span class="dot">i</span>&nbsp;L<span
+      Sa<span class="dot">i</span>n<span class="dot">i</span>&nbsp;&nbsp;L<span
         class="dot"
         >i</span
       >fters

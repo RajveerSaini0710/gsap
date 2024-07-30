@@ -83,8 +83,9 @@ onMounted(() => {
         scrollTrigger: {
           trigger: `.article-container${index}`,
           start: "8% 100%",
-          end: "8% 10%",
+          end: "8% 20%",
           scrub: true,
+          markers: true,
         },
         x: -500,
         rotate: -5,
@@ -98,8 +99,9 @@ onMounted(() => {
         scrollTrigger: {
           trigger: `.article-container${index}`,
           start: "8% 100%",
-          end: "8% 10%",
+          end: "8% 20%",
           scrub: true,
+          markers: true,
         },
         x: 500,
         rotate: 5,
