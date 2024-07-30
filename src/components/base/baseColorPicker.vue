@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-[256px] h-[20px] rounded-full flex items-stretch justify-between overflow-hidden flex-row flex-nowrap color-palatte"
+    class="w-[256px] h-[20px] rounded-full flex items-stretch justify-between overflow-hidden flex-row flex-nowrap"
   >
     <div
       v-for="(color, index) in props.colorData"
@@ -39,15 +39,16 @@ const animateIn = (index) => {
   gsap.to(colorBoxes.value[index], {
     duration: 0.3,
     opacity: 1,
-    scale: 1.5,
+    width: "40%",
     zIndex: 20,
-    ease: "power2.out",
+    ease: "back.out",
   });
   gsap.to(colorTexts.value[index], {
     duration: 0.3,
     opacity: 1,
+    fontSize: "12px",
     zIndex: 20,
-    ease: "power2.out",
+    ease: "back.out",
   });
 };
 
@@ -55,16 +56,16 @@ const animateOut = (index) => {
   gsap.to(colorBoxes.value[index], {
     duration: 0.3,
     opacity: 1,
-    scale: 1,
+    width: "20%",
     zIndex: 10,
-    ease: "power2.out",
+    ease: "back.out",
   });
   gsap.to(colorTexts.value[index], {
     duration: 0.3,
     opacity: 0,
-    scale: 1,
+    fontSize: "8px",
     zIndex: 10,
-    ease: "power2.out",
+    ease: "back.out",
   });
 };
 
