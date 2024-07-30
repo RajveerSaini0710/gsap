@@ -70,10 +70,24 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { onMounted, onBeforeUnmount } from "vue";
 import { articleSectionData } from "../../assets/variables/commonVariables.js";
+import Lenis from "lenis";
 
 gsap.registerPlugin(ScrollTrigger);
+let lenis;
 
 onMounted(() => {
+  lenis = new Lenis({
+    duration: 2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
   articleSectionData.value.forEach((article, index) => {
     const tl = gsap.timeline();
     tl.fromTo(
@@ -85,7 +99,6 @@ onMounted(() => {
           start: "8% 100%",
           end: "8% 20%",
           scrub: true,
-          markers: true,
         },
         x: -500,
         rotate: -5,
@@ -101,7 +114,6 @@ onMounted(() => {
           start: "8% 100%",
           end: "8% 20%",
           scrub: true,
-          markers: true,
         },
         x: 500,
         rotate: 5,
