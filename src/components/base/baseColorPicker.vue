@@ -1,6 +1,7 @@
 <template>
   <div
     class="w-[256px] h-[20px] rounded-full flex items-stretch justify-between overflow-hidden flex-row flex-nowrap"
+    :style="`background: ${gradientBackground};`"
   >
     <div
       v-for="(color, index) in props.colorData"
@@ -23,7 +24,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { gsap } from "gsap";
 
 const props = defineProps({
@@ -36,6 +37,10 @@ const props = defineProps({
 const colorBoxes = ref([]);
 const colorTexts = ref([]);
 const copiedIndex = ref(null);
+
+const gradientBackground = computed(() => {
+  return `linear-gradient(to right, ${props.colorData.join(", ")})`;
+});
 
 const animateIn = (index) => {
   gsap.to(colorBoxes.value[index], {
