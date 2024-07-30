@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { ref } from "vue";
 import { gsap } from "gsap";
 
 const props = defineProps({
