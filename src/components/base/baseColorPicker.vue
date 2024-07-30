@@ -78,7 +78,4 @@ const animateOut = (index) => {
 .sigle-color-picker-text {
   transition: opacity 0.3s ease;
 }
-.color-box:hover {
-  background: linear-gradient(to right, var(--color1), var(--color2));
-}
 </style>
