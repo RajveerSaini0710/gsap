@@ -5,7 +5,7 @@
     <div
       v-for="(color, index) in props.colorData"
       :key="index"
-      class="flex items-center justify-center w-1/5 rounded-full color-box cursor-pointer"
+      class="flex items-center justify-center w-1/5 rounded-full color-box"
       :style="`background-color: ${color};`"
       @mouseenter="animateIn(index)"
       @mouseleave="animateOut(index)"
@@ -42,6 +42,7 @@ const animateIn = (index) => {
     duration: 0.3,
     opacity: 1,
     width: "40%",
+    cursor: "pointer",
     zIndex: 20,
     ease: "back.out",
   });
@@ -59,6 +60,7 @@ const animateOut = (index) => {
     duration: 0.3,
     opacity: 1,
     width: "20%",
+    cursor: "pointer",
     zIndex: 10,
     ease: "back.out",
   });
