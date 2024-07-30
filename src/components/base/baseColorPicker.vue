@@ -68,8 +68,6 @@ const animateOut = (index) => {
     ease: "back.out",
   });
 };
-
-onMounted(() => {});
 </script>
 
 <style>
