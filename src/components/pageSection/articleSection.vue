@@ -44,5 +44,5 @@
 import BaseButton from "../base/baseButton.vue";
 import BaseColorPicker from "../base/baseColorPicker.vue";
 
-const colorData = ["#214356", "#8DB2C3", "#E7E7E9", "#989598", "#445F88"];
+const colorData = ["#214356", "#8DB2C3", "#E7E7C1", "#989598", "#445F88"];
 </script>
