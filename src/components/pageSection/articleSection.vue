@@ -8,7 +8,7 @@
       <img
         src="https://assets-global.website-files.com/60eeb025115a75902b86a796/647e3cc83822b06137a15c00_Header%201%20Left.jpg"
         alt="left img"
-        class="max-w-[469px] max-h-[767px] rounded-[32px]"
+        class="max-w-[469px] max-h-[767px] rounded-[32px] h-[650px]"
       />
     </div>
     <div class="max-w-[600px] w-[50vw] h-full text-center px-[64px]">
@@ -52,7 +52,7 @@
       <img
         src="https://assets-global.website-files.com/60eeb025115a75902b86a796/647e3ccc6c2ce83328c9b669_Header%202%20Right.jpg"
         alt="left img"
-        class="max-w-[469px] max-h-[767px] rounded-[32px]"
+        class="max-w-[469px] max-h-[767px] rounded-[32px] h-[650px]"
       />
     </div>
   </div>
@@ -71,33 +71,33 @@ onMounted(() => {
   const tl = gsap.timeline();
   tl.fromTo(
     ".article-img-1",
-    { x: 0 },
+    { x: 0, rotate: 0 },
     {
       scrollTrigger: {
         trigger: ".article-container",
-        start: "top center",
-        end: "bottom center",
+        start: "top 100%",
+        end: "top 10%",
         scrub: true,
         markers: true,
       },
       x: -500,
-      opacity: 1,
+      rotate: -5,
       duration: 1,
     }
   );
   tl.fromTo(
     ".article-img-2",
-    { x: 0 },
+    { x: 0, rotate: 0 },
     {
       scrollTrigger: {
         trigger: ".article-container",
-        start: "top center",
-        end: "bottom center",
+        start: "top 100%",
+        end: "top 10%",
         scrub: true,
         markers: true,
       },
       x: 500,
-      opacity: 1,
+      rotate: 5,
       duration: 1,
     }
   );
