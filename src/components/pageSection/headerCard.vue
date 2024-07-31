@@ -28,12 +28,12 @@
         class="object-cover w-full rounded-[34px] h-full"
       >
         <source
-          src="https://assets-global.website-files.com/60db5e59f76ae577e9f50d42/63600c288b483e9c7398616b_reel-transcode.mp4"
+          src="https://firebasestorage.googleapis.com/v0/b/saini-lifters.appspot.com/o/folder%2F6595755-uhd_3840_2160_24fps.mp4?alt=media&token=02fe8cef-4c6f-49a2-a06e-22680af94f3d"
           type="video/mp4"
           data-wf-ignore="true"
         />
         <source
-          src="https://assets-global.website-files.com/60db5e59f76ae577e9f50d42/63600c288b483e9c7398616b_reel-transcode.webm"
+          src="https://firebasestorage.googleapis.com/v0/b/saini-lifters.appspot.com/o/folder%2F6595755-uhd_3840_2160_24fps.mp4?alt=media&token=02fe8cef-4c6f-49a2-a06e-22680af94f3d"
           data-wf-ignore="true"
         />
         Your browser does not support the video tag.
@@ -105,7 +105,7 @@ onMounted(() => {
 <style scoped>
 .header-card-overlay {
   background-image: linear-gradient(to bottom, var(--shadow), var(--shadow));
-  opacity: 0.24;
+  opacity: 0.3;
   background-color: black;
 }
 </style>
