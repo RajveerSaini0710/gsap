@@ -13,7 +13,14 @@
           :key="index"
           class="w-fit header-card-title text-white"
         >
-          <span class="text-[80px] font-bold">{{ word }}</span>
+          <span
+            class="text-[80px] font-bold"
+            :class="{
+              'text-[#FF4057]':
+                word == 'HEAVY' || word == '.' || word == 'HIGH',
+            }"
+            >{{ word }}</span
+          >
         </div>
       </div>
     </div>

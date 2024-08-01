@@ -1,61 +1,67 @@
 <template>
   <div class="pt-[128px] pb-[150px] px-[64px] flex items-center justify-center">
-    <div class="max-w-[700px] text-center">
+    <div class="max-w-[930px] text-center">
       <div
         class="about-section-title font-roslindale text-[70px] text-[#234a76] dark:text-[#ffffff] flex items-center justify-center flex-wrap mb-[48px]"
       >
-        <span>A&nbsp;</span>
         <div class="mr-[16px] about-title-img-1">
           <img
-            src="https://assets-global.website-files.com/60db5e59f76ae577e9f50d42/61e939dee9c133675fbab858_Photo%20-%20Dolomites%20-%201.jpg"
+            src="../../assets/images/strength.jpg"
             alt="img1"
             loading="lazy"
-            width="64"
+            width="110"
             height="80"
             class="rounded-[12px]"
           />
         </div>
-        <span> tiny mountain &nbsp;</span>
-        <span>village &nbsp;</span>
-        <div class="mr-[16px] about-title-img-2">
+        <span class="text-[#FF4057]">&nbsp;&nbsp;Strength&nbsp;</span>
+
+        <span>in Every &nbsp;</span>
+        <span>Lift, &nbsp;</span>
+        <!-- <div class="mr-[16px] about-title-img-2">
           <img
-            src="https://assets-global.website-files.com/60db5e59f76ae577e9f50d42/61e939de8821f377935af4c3_Photo%20-%20Dolomites%20-%202.jpg"
+            src="../../assets/images/reliability.jpg"
             alt="img2"
             loading="lazy"
             width="64"
             height="80"
             class="rounded-[12px]"
           />
-        </div>
-        <span>where it all &nbsp;</span>
-        <span>began&nbsp;</span>
-        <span class="three-dots" v-for="(dot, index) in dots" :key="index">{{
-          dot
-        }}</span>
+        </div> -->
+        <span class="text-[#FF4057]">Reliability &nbsp;</span>
+        <span>in Every&nbsp;</span>
+        <span class="text-[#FF4057]">Rise</span>
+        <span
+          class="three-dots text-[#FF4057]"
+          v-for="(dot, index) in dots"
+          :key="index"
+          >{{ dot }}</span
+        >
         <div class="ml-[20px] about-title-img-3">
           <img
-            src="https://assets-global.website-files.com/60db5e59f76ae577e9f50d42/61e939de360c7c91700e9743_Photo%20-%20Dolomites%20-%203.jpg"
+            src="../../assets/images/rise.jpg"
             alt="img3"
             loading="lazy"
             width="120"
-            height="80"
+            height="100"
             class="rounded-[12px]"
           />
         </div>
       </div>
-      <div class="mb-[48px]">
-        <p class="text-center font-mint">
-          Giulia Gartner () is an outdoor, travel, and commercial photographer,
-          filmmaker, and storyteller from the Dolomites in northern Italy. Her
-          work focuses on capturing wild and rugged landscapes with a vivid
-          color palette and dreamy elements. Her love for photography has
-          spilled over into filmmaking which is one of the main creative outlets
-          she pursues today.
+      <div class="mb-[48px] flex items-center justify-center">
+        <p class="text-center font-mint w-11/12">
+          Saini Lifters began its journey in 2001 as a transport business. Over
+          the years, we evolved into the container crane industry, proudly
+          owning a reach stacker and a side shifter. With continuous growth and
+          dedication, we have expanded into the realm of all-terrain cranes,
+          specializing in bridge construction and factory operations. With the
+          support and blessings of God, Saini Lifters continues to reach new
+          heights in heavy lifting and industrial projects.
         </p>
       </div>
       <div class="flex justify-center">
         <BaseButton
-          text="READ MY STORY"
+          text="READ ABOUT US"
           link="https://www.giuliagartner.com/about"
           class="dark:text-[#ffffff] text-[11px] text-[#234a76]"
         />
@@ -99,7 +105,6 @@ onMounted(() => {
   threeDotAnimation();
 
   const img1 = document.querySelector(".about-title-img-1");
-  const img2 = document.querySelector(".about-title-img-2");
   const img3 = document.querySelector(".about-title-img-3");
 
   const createAnimationTimeline = (img) => {
@@ -110,7 +115,7 @@ onMounted(() => {
       {
         duration: 0.8,
         scale: 2,
-        rotate: img === img1 || img === img3 ? -10 : 10,
+        rotate: 5,
         ease: "back.out",
       }
     );
@@ -119,16 +124,11 @@ onMounted(() => {
   };
 
   const img1Tl = createAnimationTimeline(img1);
-  const img2Tl = createAnimationTimeline(img2);
   const img3Tl = createAnimationTimeline(img3);
 
   // Add event listeners for img1
   img1.addEventListener("mouseenter", () => img1Tl.play());
   img1.addEventListener("mouseleave", () => img1Tl.reverse());
-
-  // Add event listeners for img2
-  img2.addEventListener("mouseenter", () => img2Tl.play());
-  img2.addEventListener("mouseleave", () => img2Tl.reverse());
 
   // Add event listeners for img3
   img3.addEventListener("mouseenter", () => img3Tl.play());

@@ -4,21 +4,19 @@
     :class="isDark ? 'header-bg-black' : 'header-bg-white'"
   >
     <div class="flex items-center justify-between gap-2">
-      <baseButton text="STILLS" :isLoading="false" />
-      <baseButton text="MOTION" :isLoading="false" />
       <baseButton text="ABOUT" :isLoading="false" />
+      <baseButton text="SERVICES" :isLoading="false" />
+      <baseButton text="WORK" :isLoading="false" />
     </div>
     <div
       class="text-[32px] font-roslindale cursor-pointer w-full flex items-center justify-center"
       @click="logoClick"
     >
-      Sa<span class="dot">i</span>n<span class="dot">i</span>&nbsp;&nbsp;L<span
-        class="dot"
-        >i</span
-      >fters
+      Sa<span class="dot">i</span>n<span class="dot">i</span>&nbsp;
+      <span class="text-[#FF4057]"> L<span class="dot">i</span>fters</span>
     </div>
     <div class="flex items-center justify-between gap-2">
-      <baseButton text="INSTAGRAM" :isLoading="false" />
+      <baseButton text="CONTACT" :isLoading="false" />
       <baseButton text="EMAIL" :isLoading="false" />
 
       <baseButton
@@ -29,7 +27,7 @@
         class="darkModeToggle"
       >
         <template #buttonContent>
-          <span class="darkModeText">{{ isDark ? "F/24" : "F/1.4" }}</span>
+          <span class="darkModeText">{{ isDark ? "LIGHT" : "DARK" }}</span>
         </template>
       </baseButton>
     </div>
