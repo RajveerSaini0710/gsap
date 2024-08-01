@@ -18,16 +18,6 @@
 
         <span>in Every &nbsp;</span>
         <span>Lift, &nbsp;</span>
-        <!-- <div class="mr-[16px] about-title-img-2">
-          <img
-            src="../../assets/images/reliability.jpg"
-            alt="img2"
-            loading="lazy"
-            width="64"
-            height="80"
-            class="rounded-[12px]"
-          />
-        </div> -->
         <span class="text-[#FF4057]">Reliability &nbsp;</span>
         <span>in Every&nbsp;</span>
         <span class="text-[#FF4057]">Rise</span>
