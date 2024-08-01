@@ -28,10 +28,16 @@
         class="object-cover w-full rounded-[34px] h-full"
       >
         <source
+          src="../../assets/video/headerCardMainVideo.mp4"
+          type="video/mp4"
+          data-wf-ignore="true"
+        />
+        <source
           src="https://firebasestorage.googleapis.com/v0/b/saini-lifters.appspot.com/o/folder%2F6595755-uhd_3840_2160_24fps.mp4?alt=media&token=02fe8cef-4c6f-49a2-a06e-22680af94f3d"
           type="video/mp4"
           data-wf-ignore="true"
         />
+        Your browser does not support the video tag.
       </video>
     </div>
     <div
