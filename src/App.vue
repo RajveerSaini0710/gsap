@@ -9,9 +9,9 @@ const isLoading = ref(true);
 onMounted(() => {
   document.body.style.overflow = "hidden";
   setTimeout(() => {
-    isLoading.value = true;
+    isLoading.value = false;
     document.body.style.overflow = "";
-  }, 3000);
+  }, 1700);
 });
 </script>
 
