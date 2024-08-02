@@ -74,14 +74,14 @@ onMounted(() => {
   const tl = gsap.timeline();
   tl.from(".header-card", {
     opacity: 0,
-    duration: 2,
+    duration: 2.5,
     y: 600,
     backdropFilter: "blur(100px)",
     scale: 0,
     ease: "circ.out",
   }).to(".header-card", {
     opacity: 1,
-    duration: 2,
+    duration: 2.5,
     y: 0,
     backdropFilter: "blur(0px)",
     scale: 1,
