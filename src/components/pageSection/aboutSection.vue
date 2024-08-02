@@ -105,7 +105,7 @@ onMounted(() => {
       {
         duration: 0.8,
         scale: img === img3 ? 3 : 2,
-        rotate: 5,
+        rotate: img === img3 ? 0 : 5,
         ease: "back.out",
       }
     );
