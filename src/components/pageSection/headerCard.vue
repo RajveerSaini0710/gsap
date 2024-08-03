@@ -58,7 +58,7 @@ import { ref, onMounted } from "vue";
 import { gsap } from "gsap";
 
 const title = ref([
-  "🦾",
+  "👷🏽‍♂️",
   "NOTHING",
   "TOO",
   "HIGH",
