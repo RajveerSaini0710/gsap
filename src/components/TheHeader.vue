@@ -12,8 +12,8 @@
       class="text-[32px] font-roslindale cursor-pointer w-full flex items-center justify-center"
       @click="logoClick"
     >
-      Sa<span class="dot">i</span>n<span class="dot">i</span>&nbsp;
-      <span class="text-[#FF4057]"> L<span class="dot">i</span>fters</span>
+      Saini &nbsp;
+      <span class="text-[#FF4057]"> Lifters</span>
     </div>
     <div class="flex items-center justify-between gap-2">
       <baseButton text="CONTACT" :isLoading="false" />
@@ -52,31 +52,10 @@ onMounted(() => {
   tl.from(".header", {
     duration: 2,
     opacity: 0,
+    delay: 2.5,
     y: -100,
     ease: "elastic.out(1, 0.5)",
-  })
-    .from(
-      ".dot",
-      {
-        duration: 1,
-        y: -120,
-        opacity: 0,
-        ease: "power2.in",
-        stagger: 0.25,
-      },
-      "-=1.8"
-    )
-    .to(
-      ".dot",
-      {
-        duration: 1,
-        y: 0,
-        opacity: 1,
-        ease: "power2.out",
-        stagger: 0.25,
-      },
-      "-=1.8"
-    );
+  });
 });
 
 const handleToggleDark = () => {

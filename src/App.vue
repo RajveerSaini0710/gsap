@@ -1,24 +1,12 @@
 <script setup>
-import { onMounted, ref } from "vue";
-
 import TheHeader from "./components/TheHeader.vue";
 import PreLoader from "./components/PreLoader.vue";
-
-const isLoading = ref(true);
-
-onMounted(() => {
-  document.body.style.overflow = "hidden";
-  setTimeout(() => {
-    isLoading.value = false;
-    document.body.style.overflow = "";
-  }, 1700);
-});
 </script>
 
 <template>
   <div>
-    <PreLoader v-if="isLoading" />
-    <div v-else>
+    <PreLoader />
+    <div>
       <TheHeader />
       <router-view v-slot="slotProps">
         <component :is="slotProps.Component"></component>
