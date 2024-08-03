@@ -37,7 +37,7 @@
 <script setup>
 import baseButton from "./base/baseButton.vue";
 import { gsap } from "gsap";
-import { onMounted, ref, watch } from "vue";
+import { onMounted } from "vue";
 import { useDark, useToggle } from "@vueuse/core";
 import { useRouter } from "vue-router";
 
@@ -52,7 +52,7 @@ onMounted(() => {
   tl.from(".header", {
     duration: 2,
     opacity: 0,
-    delay: 2.2,
+    delay: 2.3,
     y: -100,
     ease: "elastic.out(1, 0.5)",
   });

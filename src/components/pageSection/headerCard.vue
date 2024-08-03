@@ -75,7 +75,7 @@ onMounted(() => {
   tl.from(".header-card", {
     opacity: 0,
     duration: 2.5,
-    delay: 2.2,
+    delay: 2.5,
     y: 600,
     backdropFilter: "blur(100px)",
     scale: 0,
