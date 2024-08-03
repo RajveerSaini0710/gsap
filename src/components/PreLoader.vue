@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full h-lvh flex justify-center items-center absolute top-0 left-0 z-[1000]"
+    class="w-full h-lvh flex justify-center items-center absolute top-[50px] left-0 z-[1000]"
   >
     <div class="w-full h-full flex justify-center items-center main-div">
       <div class="outerDiv overflow-hidden flex justify-center items-center">
@@ -61,7 +61,7 @@ onMounted(() => {
     { fontSize: "100px" },
     {
       duration: 1,
-      fontSize: "32px",
+      fontSize: "30px",
     }
   );
   tl.fromTo(
@@ -69,7 +69,7 @@ onMounted(() => {
     { fontSize: "100px" },
     {
       duration: 1,
-      fontSize: "32px",
+      fontSize: "30px",
     },
     "-=1"
   );

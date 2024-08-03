@@ -52,7 +52,7 @@ onMounted(() => {
   tl.from(".header", {
     duration: 2,
     opacity: 0,
-    delay: 2.5,
+    delay: 2.2,
     y: -100,
     ease: "elastic.out(1, 0.5)",
   });
