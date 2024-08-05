@@ -37,9 +37,10 @@
 <script setup>
 import baseButton from "./base/baseButton.vue";
 import { gsap } from "gsap";
-import { onMounted } from "vue";
+import { onMounted, watch } from "vue";
 import { useDark, useToggle } from "@vueuse/core";
 import { useRouter } from "vue-router";
+import { commonVariables } from "../assets/variables/commonVariables.js";
 
 const router = useRouter();
 
@@ -47,6 +48,7 @@ const isDark = useDark();
 const toggleDark = useToggle(isDark);
 
 onMounted(() => {
+  commonVariables.value.darkMode = isDark.value;
   const tl = gsap.timeline();
 
   tl.from(".header", {
@@ -92,6 +94,13 @@ const handleToggleDark = () => {
 const logoClick = () => {
   router.push("/home");
 };
+
+watch(
+  () => isDark.value,
+  (newValue) => {
+    commonVariables.value.darkMode = newValue;
+  }
+);
 </script>
 
 <style scoped>

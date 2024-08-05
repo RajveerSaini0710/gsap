@@ -1,6 +1,8 @@
 import { ref } from "vue";
 
-export const commonVariables = ref({});
+export const commonVariables = ref({
+  darkMode: null,
+});
 
 export const articleSectionData = ref([
   {

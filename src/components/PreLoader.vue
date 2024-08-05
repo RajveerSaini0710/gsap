@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full h-lvh flex justify-center items-center absolute top-[60px] left-0 z-[1000]"
+    class="w-full h-lvh flex flex-col justify-center items-center absolute top-[60px] left-0"
   >
     <div class="w-full flex justify-center items-center main-div">
       <div class="outerDiv overflow-hidden flex justify-center items-center">
