@@ -35,7 +35,7 @@
         class="object-cover w-full rounded-[34px] h-full"
       >
         <source
-          src="../../assets/video/headerCardMainVideo.mp4"
+          src="../../assets/video/cranesWorking.mp4"
           type="video/mp4"
           data-wf-ignore="true"
         />
@@ -116,7 +116,7 @@ onMounted(() => {
 <style scoped>
 .header-card-overlay {
   background-image: linear-gradient(to bottom, var(--shadow), var(--shadow));
-  opacity: 0.3;
+  opacity: 0.5;
   background-color: black;
 }
 </style>
