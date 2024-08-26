@@ -48,7 +48,7 @@
       </video>
     </div>
     <div
-      class="header-card-overlay absolute top-0 z-20 px-[64px] pb-[64px] w-[91%] h-[655px] flex items-center justify-center rounded-[34px]"
+      class="header-card-overlay absolute top-0 z-20 px-[64px] pb-[64px] w-full h-[655px] flex items-center justify-center rounded-[34px]"
     ></div>
   </div>
 </template>
