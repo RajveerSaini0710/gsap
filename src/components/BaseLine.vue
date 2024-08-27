@@ -3,22 +3,16 @@
     <div
       class="dark:text-[#ffffff] text-[30px] font-serif text-black py-6 font-extrabold flex items-center justify-center cursor-pointer"
     >
+      {{ console.log(commonVariables.darkMode, "commonVariables.darkMode") }}
+
       <img
-        v-if="commonVariables.darkMode"
-        src="../assets/images/dark-helmet.png"
+        :src="getImg('helmet.png', commonVariables.darkMode)"
         alt=""
         width="50"
         height="50"
         class="mr-8"
       />
-      <img
-        v-else
-        src="../assets/images/helmet.png"
-        alt=""
-        width="50"
-        height="50"
-        class="mr-8"
-      />
+
       Elevate Your Next Project With Our Best Heavy Lifting Services
     </div>
   </div>
@@ -26,4 +20,5 @@
 
 <script setup>
 import { commonVariables } from "../assets/variables/commonVariables";
+import getImg from "../utils/getImg.js";
 </script>

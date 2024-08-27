@@ -88,8 +88,7 @@ const buttonClasses = computed(() => {
 });
 
 const getIconSrc = (iconName) => {
-  return new URL(`../../assets/images/svg/${iconName}.svg`, import.meta.url)
-    .href;
+  return new URL(`../../assets/images/${iconName}.svg`, import.meta.url).href;
 };
 </script>
 
