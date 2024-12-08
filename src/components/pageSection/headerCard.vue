@@ -1,9 +1,9 @@
 <template>
   <div
-    class="header-card relative flex items-center justify-center top-[70px] h-[780px]"
+    class="header-card relative flex items-center justify-center top-[70px] h-[680px] mb-[100px]"
   >
     <div
-      class="absolute top-0 left-0 z-30 px-[64px] pb-[64px] font-roslindale w-full h-[720px] flex items-center justify-center"
+      class="absolute top-0 left-0 z-30 px-[64px] pb-[64px] font-roslindale w-full h-[680px] flex items-center justify-center"
     >
       <div
         class="max-w-[900px] flex items-center justify-center gap-6 flex-wrap leading-[60px]"
