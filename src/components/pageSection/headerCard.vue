@@ -14,7 +14,7 @@
           class="w-fit header-card-title text-white"
         >
           <span
-            class="text-[80px] font-bold"
+            class="title-text"
             :class="{
               'text-[#FF4057]':
                 word == 'HEAVY' || word == '.' || word == 'HIGH',
@@ -24,15 +24,15 @@
         </div>
       </div>
     </div>
-    <div
-      class="flex items-center justify-center px-[64px] pb-[64px] w-full h-[720px] absolute top-0 left-0 z-10"
-    >
+
+    <!-- Video Container -->
+    <div class="video-container relative flex items-center justify-center">
       <video
         loop
         muted
         playsinline
         autoplay
-        class="object-cover w-full rounded-[34px] h-full"
+        class="video-player object-cover rounded-[34px]"
       >
         <source
           src="../../assets/video/cranesWorking.mp4"
@@ -46,10 +46,10 @@
         />
         Your browser does not support the video tag.
       </video>
+
+      <!-- Overlay -->
+      <div class="header-card-overlay absolute top-0 left-0"></div>
     </div>
-    <div
-      class="header-card-overlay absolute top-0 z-20 px-[64px] pb-[64px] w-full h-[655px] flex items-center justify-center rounded-[34px]"
-    ></div>
   </div>
 </template>
 
@@ -67,8 +67,6 @@ const title = ref([
   "HEAVY",
   ".",
 ]);
-
-const isVideoLoaded = ref(false);
 
 onMounted(() => {
   const tl = gsap.timeline();
@@ -114,9 +112,55 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.video-container {
+  position: relative;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .header-card-overlay {
-  background-image: linear-gradient(to bottom, var(--shadow), var(--shadow));
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, var(--shadow), var(--shadow));
   opacity: 0.5;
   background-color: black;
+  border-radius: 34px;
+}
+
+/* Title Text Adjustments */
+.title-text {
+  font-size: 80px;
+  font-weight: bold;
+  transition: font-size 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .video-container {
+    width: 95%; /* 95% width for smaller screens like iPads and phones */
+  }
+
+  .title-text {
+    font-size: 70px; /* Slightly smaller font size for smaller screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .video-container {
+    width: 90%; /* 90% width for laptops and larger screens */
+  }
+
+  .title-text {
+    font-size: 80px; /* Larger font size for larger screens */
+  }
 }
 </style>
