@@ -60,7 +60,7 @@
                     id="first-name"
                     placeholder="Enter your first name"
                     required
-                    class="border border-[#234a76] dark:border-zinc-800 dark:bg-zinc-950 dark:text-white placeholder:text-zinc-400 w-full rounded-md p-2"
+                    class="border border-[#234a76] dark:border-gray-500 dark:bg-zinc-950 dark:text-white placeholder:text-zinc-400 w-full rounded-md p-2"
                   />
                 </div>
                 <div class="space-y-2">
@@ -72,7 +72,7 @@
                     v-model="form.lastName"
                     placeholder="Enter your last name"
                     required
-                    class="border border-[#234a76] dark:border-zinc-800 dark:bg-zinc-950 dark:text-white placeholder:text-zinc-400 w-full rounded-md p-2"
+                    class="border border-[#234a76] dark:border-gray-500 dark:bg-zinc-950 dark:text-white placeholder:text-zinc-400 w-full rounded-md p-2"
                   />
                 </div>
               </div>
@@ -84,7 +84,7 @@
                   placeholder="Enter your email"
                   required
                   type="email"
-                  class="border border-[#234a76] dark:border-zinc-800 dark:bg-zinc-950 dark:text-white placeholder:text-zinc-400 w-full rounded-md p-2"
+                  class="border border-[#234a76] dark:border-gray-500 dark:bg-zinc-950 dark:text-white placeholder:text-zinc-400 w-full rounded-md p-2"
                 />
               </div>
               <div class="space-y-2">
@@ -94,7 +94,7 @@
                   v-model="form.message"
                   placeholder="Enter your message"
                   required
-                  class="min-h-[200px] border border-[#234a76] dark:border-zinc-800 dark:bg-zinc-950 dark:text-white placeholder:text-zinc-400 w-full rounded-md p-2"
+                  class="min-h-[200px] border border-[#234a76] dark:border-gray-500 dark:bg-zinc-950 dark:text-white placeholder:text-zinc-400 w-full rounded-md p-2"
                 ></textarea>
               </div>
               <button
