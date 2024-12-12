@@ -117,7 +117,7 @@ watch(
   opacity: 0;
 }
 .header-bg-white {
-  background-color: rgb(228 226 235 / 60%);
+  background-color: #eae4e4;
 }
 
 .header-bg-black {
