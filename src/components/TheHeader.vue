@@ -16,7 +16,11 @@
       <span class="text-[#FF4057]"> Lifters</span>
     </div>
     <div class="flex items-center justify-between gap-2">
-      <baseButton text="CONTACT" :isLoading="false" />
+      <baseButton
+        text="CONTACT"
+        :isLoading="false"
+        @click="router.push('/contact-us')"
+      />
       <baseButton text="EMAIL" :isLoading="false" />
 
       <baseButton
