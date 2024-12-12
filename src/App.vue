@@ -24,6 +24,6 @@ html.dark {
   color-scheme: dark;
 }
 body {
-  @apply bg-[#e4e2eb] dark:bg-[#161719] dark:text-[#ffffff] text-[#234a76];
+  @apply bg-white dark:bg-[#161719] dark:text-[#ffffff] text-[#234a76];
 }
 </style>
