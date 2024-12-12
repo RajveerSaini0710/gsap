@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-h-screen bg-white dark:bg-black p-4 md:p-8 lg:p-12 flex justify-center items-center"
+    class="mt-[65px] bg-white dark:bg-black p-4 md:p-8 lg:p-12 flex justify-center items-center"
   >
     <div class="mx-auto max-w-5xl">
       <div class="grid gap-6 lg:grid-cols-2">
