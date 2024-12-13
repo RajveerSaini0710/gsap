@@ -38,10 +38,12 @@
           </div>
         </div>
         <!-- Contact Form -->
+        <!-- class="border border-red-500/20 dark:bg-zinc-900 rounded-md shadow" -->
         <div
-          class="border border-red-500/20 dark:bg-zinc-900 rounded-md shadow"
+          class="relative flex h-full w-full flex-col justify-center overflow-hidden rounded-lg border border-red-500/30 bg-background md:shadow-xl"
         >
-          <div class="p-4">
+          <BorderBeam :size="250" :duration="12" :delay="9" :border-width="2" />
+          <div class="pt-6 px-4 pb-4">
             <h2 class="dark:text-white text-lg font-semibold">
               Send us a Message
             </h2>
@@ -49,7 +51,7 @@
               Fill out the form below and we'll get back to you shortly.
             </p>
           </div>
-          <div class="p-4">
+          <div class="pt-4 px-4 pb-6">
             <form @submit.prevent="onSubmit" class="space-y-4">
               <div class="grid gap-4 md:grid-cols-2">
                 <div class="space-y-2">
@@ -120,6 +122,7 @@
 import { reactive, ref } from "vue";
 import { PhoneCall, Mail, MapPin, Loader } from "lucide-vue-next"; // Import Lucide icons
 import Globe from "../components/inspiraUi/globe.vue";
+import BorderBeam from "../components/inspiraUi/borderBeam.vue";
 
 const form = reactive({
   firstName: "",
