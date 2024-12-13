@@ -42,7 +42,12 @@
         <div
           class="relative flex h-full w-full flex-col justify-center overflow-hidden rounded-lg border border-red-500/30 bg-background md:shadow-xl"
         >
-          <BorderBeam :size="250" :duration="12" :delay="9" :border-width="2" />
+          <BorderBeam
+            :size="400"
+            :duration="8"
+            :delay="9"
+            :border-width="1.5"
+          />
           <div class="pt-6 px-4 pb-4">
             <h2 class="dark:text-white text-lg font-semibold">
               Send us a Message
