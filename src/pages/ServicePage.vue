@@ -1,27 +1,27 @@
 <template>
   <div class="min-h-screen mt-[70px]">
     <!-- Hero Section -->
-    <section class="relative h-[40vh] overflow-hidden">
-      <div class="absolute inset-0">
-        <!-- <img
-          src="/placeholder.svg?height=400&width=1200"
-          alt="Heavy machinery in action"
-          class="w-full h-full object-cover opacity-50"
-        /> -->
+    <section
+      class="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden bg-background"
+    >
+      <div class="text-center space-y-4 px-4 z-10">
+        <h1 class="text-4xl md:text-6xl font-bold">
+          <span class="text-red-500">Professional</span> Lifting Solutions
+        </h1>
+        <p
+          class="text-lg md:text-xl text-gray-500 dark:text-gray-300 max-w-2xl mx-auto"
+        >
+          Comprehensive range of heavy lifting and material handling equipment
+          for rent
+        </p>
       </div>
-      <div class="relative h-full flex items-center justify-center">
-        <div class="text-center space-y-4 px-4">
-          <h1 class="text-4xl md:text-6xl font-bold">
-            <span class="text-red-500">Professional</span> Lifting Solutions
-          </h1>
-          <p
-            class="text-lg md:text-xl text-gray-500 dark:text-gray-300 max-w-2xl mx-auto"
-          >
-            Comprehensive range of heavy lifting and material handling equipment
-            for rent
-          </p>
-        </div>
-      </div>
+      <DotPattern
+        :class="
+          clsx(
+            '[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]'
+          )
+        "
+      />
     </section>
 
     <!-- Services Grid -->
@@ -90,6 +90,8 @@ import {
   ForkliftIcon as ForkliftTruck,
   ArrowUpCircle,
 } from "lucide-vue-next";
+import clsx from "clsx";
+import DotPattern from "../components/inspiraUi/dottedBackground.vue";
 
 const router = useRouter();
 const services = ref([
