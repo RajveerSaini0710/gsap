@@ -43,20 +43,29 @@
 </template>
 
 <script setup>
-import baseButton from "./base/baseButton.vue";
 import { gsap } from "gsap";
+import { useRouter, useRoute } from "vue-router";
 import { onMounted, watch } from "vue";
+import baseButton from "./base/baseButton.vue";
 import { useDark, useToggle } from "@vueuse/core";
-import { useRouter } from "vue-router";
 import { commonVariables } from "../assets/variables/commonVariables.js";
 
 const router = useRouter();
-
+const route = useRoute();
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 
 onMounted(() => {
   commonVariables.value.darkMode = isDark.value;
+  const hasVisited = sessionStorage.getItem("homepage-visited");
+  console.log(route.path, "hhh");
+
+  if ((route.path == "/home" || route.path == "/") && !hasVisited) {
+    runHeaderAnimation();
+  }
+});
+
+const runHeaderAnimation = () => {
   const tl = gsap.timeline();
 
   tl.from(".header", {
@@ -66,7 +75,7 @@ onMounted(() => {
     y: -100,
     ease: "elastic.out(1, 0.5)",
   });
-});
+};
 
 const handleToggleDark = () => {
   toggleDark();
