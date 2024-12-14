@@ -86,7 +86,7 @@
             </li>
             <li>
               <RouterLink
-                to="/contact"
+                to="/contact-us"
                 class="transition-colors"
                 :class="
                   isDark
