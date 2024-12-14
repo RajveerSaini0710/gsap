@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen mt-[60px]">
+  <div class="min-h-screen mt-[70px]">
     <!-- Hero Section -->
     <section class="relative h-[40vh] overflow-hidden">
       <div class="absolute inset-0">
@@ -30,7 +30,7 @@
         <div
           v-for="service in services"
           :key="service.title"
-          class="bg-gray-50 dark:bg-zinc-800 border dark:border-zinc-800 rounded-lg p-6 hover:border-red-500 transition-colors"
+          class="bg-gray-50 dark:bg-zinc-800 border dark:border-zinc-800 rounded-lg p-6 hover:border-red-500 hover:dark:border-red-500 transition-colors"
         >
           <div class="flex items-center gap-4 mb-4">
             <div class="p-3 rounded-lg bg-red-500/10">
