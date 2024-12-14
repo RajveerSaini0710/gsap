@@ -9,7 +9,11 @@
         :isLoading="false"
         @click="router.push('/about-us')"
       />
-      <baseButton text="SERVICES" :isLoading="false" />
+      <baseButton
+        text="SERVICES"
+        :isLoading="false"
+        @click="router.push('/service')"
+      />
       <baseButton text="WORK" :isLoading="false" />
     </div>
     <div
