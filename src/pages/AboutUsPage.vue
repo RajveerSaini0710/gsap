@@ -9,9 +9,7 @@
     <section class="py-20 container mx-auto px-4" id="our-journey">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 class="text-4xl font-bold mb-6">
-            Our <span class="text-[#ff4057]">Journey</span>
-          </h2>
+          <h2 class="text-4xl font-bold mb-6">Our Journey</h2>
           <p class="dark:text-gray-300 mb-6">
             Founded in 2008 by Mr. Charanjit Singh, Saini Lifters has grown to
             become a leading name in the crane rental industry. With over 15
@@ -56,7 +54,7 @@
           <div
             v-for="(stat, index) in stats"
             :key="index"
-            class="text-center border border-red-500 w-[280px] h-[200px] rounded-md flex items-center justify-center flex-col"
+            class="text-center border border-gray-300 dark:border-gray-500 hover:border-red-500 hover:dark:border-red-500 transition-colors w-[280px] h-[200px] rounded-lg flex items-center justify-center flex-col"
             ref="statItem"
           >
             <component
@@ -69,12 +67,50 @@
         </div>
       </div>
     </section>
+
+    <!-- we serve section -->
+    <section class="py-20 container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-center">Industries We Serve</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div
+          v-for="(industry, index) in industries"
+          :key="index"
+          class="p-6 border border-gray-300 dark:border-gray-500 rounded-lg text-center hover:dark:border-red-500 hover:border-red-500 transition-colors"
+        >
+          {{ industry }}
+        </div>
+      </div>
+    </section>
+
+    <!-- Cta Section -->
+    <section
+      class="py-20 w-full flex justify-center items-center"
+      ref="motionSection"
+    >
+      <div class="container text-center">
+        <div ref="motionContent">
+          <h2 class="text-4xl font-bold mb-6">Ready to Work Together?</h2>
+          <p class="text-gray-500 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+            Let's discuss how Saini Lifters can help with your heavy lifting and
+            industrial needs.
+          </p>
+          <button
+            type="submit"
+            class="min-w-80 bg-red-500 text-white hover:bg-red-600 rounded-md p-2 disabled:opacity-50"
+            @click="router.push('/contact-us')"
+          >
+            Contact Us
+          </button>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script setup>
 import { gsap } from "gsap";
 import { ref, onMounted } from "vue";
+import { useRouter } from "vue-router";
 import HeaderCard from "../components/pageSection/headerCard.vue";
 import {
   Building2,
@@ -85,6 +121,7 @@ import {
   Award,
 } from "lucide-vue-next";
 
+const router = useRouter();
 const aboutUsPageTitle = ref(["ABOUT", "SAINI", "LIFTERS", "."]);
 const stats = [
   { icon: Clock, label: "Years of Experience", value: "15+" },
@@ -93,6 +130,19 @@ const stats = [
   { icon: Award, label: "Projects Completed", value: "100+" },
 ];
 
+const industries = ref([
+  "Construction & Infrastructure",
+  "Power & Energy",
+  "Oil & Gas",
+  "Industrial Manufacturing",
+  "Civil Engineering",
+  "Heavy Equipment",
+  "Bridge Construction",
+  "Factory Operations",
+]);
+
+const motionSection = ref(null);
+const motionContent = ref(null);
 const statItems = ref([]);
 
 onMounted(() => {
@@ -102,6 +152,19 @@ onMounted(() => {
     stagger: 0.1,
     duration: 0.5,
   });
+  gsap.fromTo(
+    motionContent.value,
+    { opacity: 0 },
+    {
+      opacity: 1,
+      duration: 1, // Duration of the fade-in animation
+      scrollTrigger: {
+        trigger: motionSection.value,
+        start: "top bottom", // Trigger the animation when the section comes into view
+        once: true, // Trigger animation once
+      },
+    }
+  );
 });
 </script>
 
