@@ -61,7 +61,11 @@
               :is="stat.icon"
               class="w-12 h-12 mx-auto mb-4 text-red-500"
             />
-            <h3 class="text-4xl font-bold mb-2">{{ stat.value }}</h3>
+            <p
+              className="whitespace-pre-wrap text-4xl font-bold mb-2 tracking-tighter text-black dark:text-white"
+            >
+              <NumberTicker :value="stat.value" />+
+            </p>
             <p class="text-gray-400">{{ stat.label }}</p>
           </div>
         </div>
@@ -112,6 +116,7 @@ import { gsap } from "gsap";
 import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import HeaderCard from "../components/pageSection/headerCard.vue";
+import NumberTicker from "../components/inspiraUi/numberTicker.vue";
 import {
   Building2,
   Calendar,
@@ -124,10 +129,10 @@ import {
 const router = useRouter();
 const aboutUsPageTitle = ref(["ABOUT", "SAINI", "LIFTERS", "."]);
 const stats = [
-  { icon: Clock, label: "Years of Experience", value: "15+" },
-  { icon: Forklift, label: "Cranes in Fleet", value: "20+" },
-  { icon: Users, label: "Team Members", value: "50+" },
-  { icon: Award, label: "Projects Completed", value: "100+" },
+  { icon: Clock, label: "Years of Experience", value: 15 },
+  { icon: Forklift, label: "Cranes in Fleet", value: 20 },
+  { icon: Users, label: "Team Members", value: 60 },
+  { icon: Award, label: "Projects Completed", value: 100 },
 ];
 
 const industries = ref([
