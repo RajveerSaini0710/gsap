@@ -82,6 +82,16 @@
                 </div>
               </div>
               <div class="space-y-2">
+                <label for="phone" class="dark:text-white">Phone Number</label>
+                <input
+                  id="phone"
+                  v-model="form.phone"
+                  placeholder="Enter your phone number"
+                  required
+                  class="border border-[#234a76] dark:border-gray-500 dark:bg-zinc-950 dark:text-white placeholder:text-zinc-400 w-full rounded-md p-2"
+                />
+              </div>
+              <div class="space-y-2">
                 <label for="email" class="dark:text-white">Email</label>
                 <input
                   id="email"
@@ -99,7 +109,7 @@
                   v-model="form.message"
                   placeholder="Enter your message"
                   required
-                  class="min-h-[200px] border border-[#234a76] dark:border-gray-500 dark:bg-zinc-950 dark:text-white placeholder:text-zinc-400 w-full rounded-md p-2"
+                  class="min-h-[100px] border border-[#234a76] dark:border-gray-500 dark:bg-zinc-950 dark:text-white placeholder:text-zinc-400 w-full rounded-md p-2"
                 ></textarea>
               </div>
               <button
@@ -130,6 +140,7 @@ import BorderBeam from "../components/inspiraUi/borderBeam.vue";
 const form = reactive({
   firstName: "",
   lastName: "",
+  phone: "",
   email: "",
   message: "",
 });
