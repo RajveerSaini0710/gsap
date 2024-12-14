@@ -50,7 +50,7 @@
     <!-- Stats section -->
     <section class="py-20 flex items-center justify-center flex-wrap">
       <div class="container flex items-center justify-center flex-wrap">
-        <div class="gap-8 flex flex-wrap">
+        <div class="gap-8 flex flex-wrap items-center justify-center">
           <div
             v-for="(stat, index) in stats"
             :key="index"
