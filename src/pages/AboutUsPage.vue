@@ -62,11 +62,11 @@
               class="w-12 h-12 mx-auto mb-4 text-red-500"
             />
             <p
-              className="whitespace-pre-wrap text-4xl font-bold mb-2 tracking-tighter text-black dark:text-white"
+              className="whitespace-pre-wrap text-4xl font-bold mb-2 tracking-tighter "
             >
               <NumberTicker :value="stat.value" />+
             </p>
-            <p class="text-gray-400">{{ stat.label }}</p>
+            <p class="text-gray-500 dark:text-gray-400">{{ stat.label }}</p>
           </div>
         </div>
       </div>

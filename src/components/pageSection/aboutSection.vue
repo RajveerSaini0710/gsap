@@ -54,6 +54,7 @@
           text="READ ABOUT US"
           link="https://www.giuliagartner.com/about"
           class="dark:text-[#ffffff] text-[11px] text-[#234a76]"
+          @click="router.push('/about-us')"
         />
       </div>
     </div>
@@ -64,7 +65,9 @@
 import BaseButton from "../base/baseButton.vue";
 import { gsap } from "gsap";
 import { onMounted, ref } from "vue";
+import { useRouter } from "vue-router";
 
+const router = useRouter();
 const dots = ref([".", ".", ".", " "]);
 
 const threeDotAnimation = () => {
