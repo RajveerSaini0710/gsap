@@ -5,7 +5,7 @@ import PreLoader from "./components/PreLoader.vue";
 
 <template>
   <div>
-    <!-- <PreLoader /> -->
+    <PreLoader />
     <div>
       <TheHeader />
       <router-view v-slot="slotProps">

@@ -1,6 +1,7 @@
 <template>
   <div
     class="w-full h-lvh flex flex-col justify-center items-center absolute top-[60px] left-0"
+    v-if="!hasVisited"
   >
     <div class="w-full flex justify-center items-center main-div">
       <div class="outerDiv overflow-hidden flex justify-center items-center">
@@ -34,6 +35,14 @@ const companyLastName = ref(["L", "I", "F", "T", "E", "R", "S"]);
 const tl = gsap.timeline();
 
 onMounted(() => {
+  const hasVisited = sessionStorage.getItem("homepage-visited");
+
+  if (!hasVisited) {
+    runPreloaderAnimation();
+  }
+});
+
+const runPreloaderAnimation = () => {
   tl.fromTo(
     ".companyFirstName",
     { y: 200, opacity: 0.3 },
@@ -97,5 +106,5 @@ onMounted(() => {
     },
     "-=1"
   );
-});
+};
 </script>

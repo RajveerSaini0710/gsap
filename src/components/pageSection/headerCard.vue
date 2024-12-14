@@ -74,7 +74,7 @@
 
 <script setup>
 import { gsap } from "gsap";
-import { onMounted } from "vue";
+import { onMounted, onBeforeUnmount } from "vue";
 import { useRoute } from "vue-router";
 import { ChevronDown } from "lucide-vue-next";
 import TextGenerate from "../inspiraUi/textGenerate.vue";
@@ -105,7 +105,6 @@ onMounted(() => {
 
   if (route.path == "/home" && !hasVisited) {
     runAnimations();
-    sessionStorage.setItem("homepage-visited", "true");
   }
 
   gsap.from(".chevron-down", {
@@ -114,6 +113,10 @@ onMounted(() => {
     yoyo: true,
     repeat: -1,
   });
+});
+
+onBeforeUnmount(() => {
+  sessionStorage.setItem("homepage-visited", "true");
 });
 
 const runAnimations = () => {
