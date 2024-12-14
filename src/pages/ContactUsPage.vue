@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="mt-[65px] bg-white dark:bg-black p-4 md:p-8 lg:p-12 flex justify-center items-center"
-  >
+  <div class="mt-[65px] p-4 md:p-8 lg:p-12 flex justify-center items-center">
     <div class="mx-auto max-w-5xl">
       <div class="grid gap-6 lg:grid-cols-2">
         <!-- Contact Information -->
