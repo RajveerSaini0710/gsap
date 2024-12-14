@@ -14,7 +14,6 @@
         :isLoading="false"
         @click="router.push('/service')"
       />
-      <baseButton text="WORK" :isLoading="false" />
     </div>
     <div
       class="text-[32px] font-roslindale cursor-pointer w-full flex items-center justify-center"
