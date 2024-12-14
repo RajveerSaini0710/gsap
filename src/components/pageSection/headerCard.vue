@@ -3,25 +3,48 @@
     class="header-card relative flex items-center justify-center top-[70px] h-[680px] mb-[100px]"
   >
     <div
-      class="absolute top-0 left-0 z-30 px-[64px] pb-[64px] font-roslindale w-full h-[680px] flex items-center justify-center"
+      class="absolute top-0 left-0 z-30 px-[64px] pb-[64px] font-roslindale w-full h-[680px] flex flex-col items-center justify-center"
     >
-      <div
-        class="max-w-[900px] flex items-center justify-center gap-6 flex-wrap leading-[60px]"
-      >
-        <div
-          v-for="(word, index) in title"
-          :key="index"
-          class="w-fit header-card-title text-white"
-        >
-          <span
-            class="title-text"
-            :class="{
-              'text-[#FF4057]':
-                word == 'HEAVY' || word == '.' || word == 'HIGH',
-            }"
-            >{{ word }}</span
+      <div class="flex flex-1 flex-col items-center justify-center">
+        <div>
+          <div
+            class="max-w-[900px] flex items-center justify-center gap-6 flex-wrap leading-[60px]"
           >
+            <div
+              v-for="(word, index) in props.title"
+              :key="index"
+              class="w-fit header-card-title text-white"
+            >
+              <span
+                class="title-text"
+                :class="{
+                  'text-[#FF4057]':
+                    word == 'HEAVY' ||
+                    word == '.' ||
+                    word == 'HIGH' ||
+                    word == 'SAINI' ||
+                    word == 'LIFTERS',
+                }"
+                >{{ word }}</span
+              >
+            </div>
+          </div>
         </div>
+        <div
+          v-if="props.subTitle"
+          class="text-white mt-4 text-2xl w-[60%] text-center"
+        >
+          <TextGenerate :words="props.subTitle" />
+        </div>
+      </div>
+      <div
+        v-if="props.isDownIconHash"
+        class="flex items-center justify-center chevron-down"
+      >
+        <ChevronDown
+          class="h-10 w-10 cursor-pointer text-red-500"
+          @click="scrollToElement(props.isDownIconHash)"
+        />
       </div>
     </div>
 
@@ -34,11 +57,7 @@
         autoplay
         class="video-player object-cover rounded-[34px]"
       >
-        <source
-          src="../../assets/video/cranesWorking.mp4"
-          type="video/mp4"
-          data-wf-ignore="true"
-        />
+        <source :src="props.videoUrl" type="video/mp4" data-wf-ignore="true" />
         <source
           src="https://firebasestorage.googleapis.com/v0/b/saini-lifters.appspot.com/o/folder%2F6595755-uhd_3840_2160_24fps.mp4?alt=media&token=02fe8cef-4c6f-49a2-a06e-22680af94f3d"
           type="video/mp4"
@@ -54,21 +73,50 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
 import { gsap } from "gsap";
+import { onMounted } from "vue";
+import { useRoute } from "vue-router";
+import { ChevronDown } from "lucide-vue-next";
+import TextGenerate from "../inspiraUi/textGenerate.vue";
 
-const title = ref([
-  "👷🏽‍♂️",
-  "NOTHING",
-  "TOO",
-  "HIGH",
-  "NOTHING",
-  "TOO",
-  "HEAVY",
-  ".",
-]);
+const props = defineProps({
+  title: {
+    type: Array,
+    required: true,
+  },
+  videoUrl: {
+    type: String,
+    required: true,
+  },
+  subTitle: {
+    type: String,
+    required: false,
+  },
+  isDownIconHash: {
+    type: String,
+    required: false,
+  },
+});
+
+const route = useRoute();
 
 onMounted(() => {
+  const hasVisited = sessionStorage.getItem("homepage-visited");
+
+  if (route.path == "/home" && !hasVisited) {
+    runAnimations();
+    sessionStorage.setItem("homepage-visited", "true");
+  }
+
+  gsap.from(".chevron-down", {
+    y: 30,
+    duration: 1,
+    yoyo: true,
+    repeat: -1,
+  });
+});
+
+const runAnimations = () => {
   const tl = gsap.timeline();
   tl.from(".header-card", {
     opacity: 0,
@@ -108,7 +156,14 @@ onMounted(() => {
     },
     "-=2.4"
   );
-});
+};
+
+const scrollToElement = (hash) => {
+  const element = document.getElementById(hash);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+};
 </script>
 
 <style scoped>

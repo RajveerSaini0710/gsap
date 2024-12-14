@@ -3,6 +3,7 @@ import "./assets/css/index.css";
 import App from "./App.vue";
 import router from "./router.js";
 import Lenis from "lenis";
+import { MotionPlugin } from "@vueuse/motion";
 
 const app = createApp(App);
 
@@ -20,5 +21,6 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
+app.use(MotionPlugin);
 app.use(router);
 app.mount("#app");

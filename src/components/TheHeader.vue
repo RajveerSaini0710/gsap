@@ -4,7 +4,11 @@
     :class="isDark ? 'header-bg-black' : 'header-bg-white'"
   >
     <div class="flex items-center justify-between gap-2">
-      <baseButton text="ABOUT" :isLoading="false" />
+      <baseButton
+        text="ABOUT"
+        :isLoading="false"
+        @click="router.push('/about-us')"
+      />
       <baseButton text="SERVICES" :isLoading="false" />
       <baseButton text="WORK" :isLoading="false" />
     </div>

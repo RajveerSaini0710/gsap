@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.11.0",
+    "@vueuse/motion": "^2.2.6",
     "clsx": "^2.1.1",
     "cobe": "^0.6.3",
     "gsap": "^3.12.5",
