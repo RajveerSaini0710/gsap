@@ -48,15 +48,61 @@
         </div>
       </div>
     </section>
+
+    <!-- Stats section -->
+    <section class="py-20 flex items-center justify-center flex-wrap">
+      <div class="container flex items-center justify-center flex-wrap">
+        <div class="gap-8 flex flex-wrap">
+          <div
+            v-for="(stat, index) in stats"
+            :key="index"
+            class="text-center border border-red-500 w-[280px] h-[200px] rounded-md flex items-center justify-center flex-col"
+            ref="statItem"
+          >
+            <component
+              :is="stat.icon"
+              class="w-12 h-12 mx-auto mb-4 text-red-500"
+            />
+            <h3 class="text-4xl font-bold mb-2">{{ stat.value }}</h3>
+            <p class="text-gray-400">{{ stat.label }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { gsap } from "gsap";
+import { ref, onMounted } from "vue";
 import HeaderCard from "../components/pageSection/headerCard.vue";
-import { Building2, Calendar, Forklift, Users } from "lucide-vue-next";
+import {
+  Building2,
+  Calendar,
+  Forklift,
+  Users,
+  Clock,
+  Award,
+} from "lucide-vue-next";
 
 const aboutUsPageTitle = ref(["ABOUT", "SAINI", "LIFTERS", "."]);
+const stats = [
+  { icon: Clock, label: "Years of Experience", value: "15+" },
+  { icon: Forklift, label: "Cranes in Fleet", value: "20+" },
+  { icon: Users, label: "Team Members", value: "50+" },
+  { icon: Award, label: "Projects Completed", value: "100+" },
+];
+
+const statItems = ref([]);
+
+onMounted(() => {
+  gsap.from(statItems.value, {
+    opacity: 0,
+    y: 20,
+    stagger: 0.1,
+    duration: 0.5,
+  });
+});
 </script>
 
 <style scoped></style>
