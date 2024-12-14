@@ -1,6 +1,6 @@
 <template>
   <div
-    class="header-card relative flex items-center justify-center top-[70px] h-[680px] mb-[100px]"
+    class="header-card relative flex items-center justify-center top-[65px] h-[680px] mb-[100px]"
   >
     <div
       class="absolute top-0 left-0 z-30 px-[64px] pb-[64px] font-roslindale w-full h-[680px] flex flex-col items-center justify-center"
@@ -105,6 +105,7 @@ onMounted(() => {
 
   if (route.path == "/home" && !hasVisited) {
     runAnimations();
+    sessionStorage.setItem("homepage-visited", "true");
   }
 
   gsap.from(".chevron-down", {
@@ -113,10 +114,6 @@ onMounted(() => {
     yoyo: true,
     repeat: -1,
   });
-});
-
-onBeforeUnmount(() => {
-  sessionStorage.setItem("homepage-visited", "true");
 });
 
 const runAnimations = () => {

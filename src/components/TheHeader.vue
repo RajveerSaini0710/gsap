@@ -58,7 +58,6 @@ const toggleDark = useToggle(isDark);
 onMounted(() => {
   commonVariables.value.darkMode = isDark.value;
   const hasVisited = sessionStorage.getItem("homepage-visited");
-  console.log(route.path, "hhh");
 
   if ((route.path == "/home" || route.path == "/") && !hasVisited) {
     runHeaderAnimation();
