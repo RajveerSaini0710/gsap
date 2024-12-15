@@ -49,7 +49,7 @@
         </div>
 
         <div
-          class="relative mt-4 mx-auto w-4/5 h-1 overflow-hidden rounded-full bg-zinc-800"
+          class="relative mt-4 mx-auto w-4/5 h-1 overflow-hidden rounded-full dark:bg-zinc-600 bg-zinc-200"
         >
           <div
             class="absolute h-full bg-red-500 transition-all duration-200 ease-out"
