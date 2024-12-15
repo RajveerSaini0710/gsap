@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen pt-20 pb-36">
+  <div class="min-h-screen pt-28 pb-36">
     <div class="container">
       <div class="relative mx-auto max-w-7xl px-4">
         <div ref="emblaRoot" class="overflow-hidden">
@@ -49,7 +49,7 @@
         </div>
 
         <div
-          class="relative mt-4 mx-auto w-4/5 h-1 overflow-hidden rounded-full dark:bg-zinc-600 bg-zinc-200"
+          class="relative mt-8 mx-auto w-4/5 h-1 overflow-hidden rounded-full dark:bg-zinc-600 bg-zinc-200"
         >
           <div
             class="absolute h-full bg-red-500 transition-all duration-200 ease-out"
