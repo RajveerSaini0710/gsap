@@ -3,8 +3,6 @@
     <div
       class="dark:text-[#ffffff] text-[30px] font-serif text-black py-6 font-extrabold flex items-center justify-center cursor-pointer"
     >
-      {{ console.log(commonVariables.darkMode, "commonVariables.darkMode") }}
-
       <img
         :src="getImg('helmet.png', commonVariables.darkMode)"
         alt=""
