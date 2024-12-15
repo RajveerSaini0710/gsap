@@ -31,7 +31,7 @@ const props = withDefaults(
     delay?: number;
     class: HTMLAttributes["class"];
   }>(),
-  { duration: 0.7, delay: 10, filter: true }
+  { duration: 1, delay: 5, filter: true }
 );
 
 const scope = ref(null);
