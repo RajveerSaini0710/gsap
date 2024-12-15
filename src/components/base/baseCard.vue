@@ -13,7 +13,10 @@
           <h3 class="text-xl font-bold">{{ crane.name }}</h3>
           <p class="text-lg font-semibold text-red-500">{{ crane.capacity }}</p>
         </div>
-        <Download class="h-5 w-5" />
+        <Download
+          class="h-5 w-5 cursor-pointer"
+          @click="downloadFleet(crane.name)"
+        />
       </div>
       <div class="grid grid-cols-2 gap-4 text-sm">
         <div
@@ -47,6 +50,10 @@ const specs = computed(() => [
   props.crane.luffing,
   props.crane.totalBoom,
 ]);
+
+const downloadFleet = (name) => {
+  console.log("Download fleet", name);
+};
 </script>
 
 <style scoped>

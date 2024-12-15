@@ -87,7 +87,7 @@ const cranes = reactive([
     image: "/public/image/crane-1.png",
   },
   {
-    name: "LTM 1300-6.2",
+    name: "XCMG XY-100K",
     capacity: "300 tonnes",
     mainBoom: { value: "78m", label: "Main Boom" },
     jib: { value: "70m", label: "JIB" },
@@ -96,7 +96,7 @@ const cranes = reactive([
     image: "/public/image/crane-1.png",
   },
   {
-    name: "LTM 1300-6.2",
+    name: "ABCD 1000-6.2",
     capacity: "300 tonnes",
     mainBoom: { value: "78m", label: "Main Boom" },
     jib: { value: "70m", label: "JIB" },
@@ -105,7 +105,7 @@ const cranes = reactive([
     image: "/public/image/crane-1.png",
   },
   {
-    name: "LTM 1300-6.2",
+    name: "ABCD 1000",
     capacity: "300 tonnes",
     mainBoom: { value: "78m", label: "Main Boom" },
     jib: { value: "70m", label: "JIB" },
@@ -114,7 +114,7 @@ const cranes = reactive([
     image: "/public/image/crane-1.png",
   },
   {
-    name: "LTM 1300-6.2",
+    name: "ABCD 1002-6.2",
     capacity: "300 tonnes",
     mainBoom: { value: "78m", label: "Main Boom" },
     jib: { value: "70m", label: "JIB" },
@@ -123,7 +123,7 @@ const cranes = reactive([
     image: "/public/image/crane-1.png",
   },
   {
-    name: "LTM 1300-6.2",
+    name: "LTMN 13-6.2",
     capacity: "300 tonnes",
     mainBoom: { value: "78m", label: "Main Boom" },
     jib: { value: "70m", label: "JIB" },
@@ -132,7 +132,7 @@ const cranes = reactive([
     image: "/public/image/crane-1.png",
   },
   {
-    name: "LTM 1300-6.2",
+    name: "LTMNNN 1300-6.2",
     capacity: "300 tonnes",
     mainBoom: { value: "78m", label: "Main Boom" },
     jib: { value: "70m", label: "JIB" },
