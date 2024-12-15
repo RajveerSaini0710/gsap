@@ -117,13 +117,14 @@
               <span>+91 9322296990</span>
             </a>
             <a
-              href="mailto:charanjit@sainilifters.com"
+              href="#"
               class="flex items-center space-x-2 transition-colors"
               :class="
                 isDark
                   ? 'text-gray-400 hover:text-red-500'
                   : 'text-[#234a76] hover:text-red-500'
               "
+              @click.prevent="redirectToEmail"
             >
               <MailIcon class="h-5 w-5" />
               <span>charanjit@sainilifters.com</span>
@@ -194,6 +195,7 @@ import {
 } from "lucide-vue-next";
 import { RouterLink } from "vue-router";
 import { useDark } from "@vueuse/core";
+import { redirectToEmail } from "../utils/commonFunctions.js";
 
 const isDark = useDark();
 </script>

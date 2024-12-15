@@ -28,7 +28,7 @@
         :isLoading="false"
         @click="router.push('/contact-us')"
       />
-      <baseButton text="EMAIL" :isLoading="false" />
+      <baseButton text="EMAIL" :isLoading="false" @click="redirectToEmail" />
 
       <baseButton
         :icon="{ name: 'appeture' }"
@@ -52,6 +52,7 @@ import { onMounted, watch } from "vue";
 import baseButton from "./base/baseButton.vue";
 import { useDark, useToggle } from "@vueuse/core";
 import { commonVariables } from "../assets/variables/commonVariables.js";
+import { redirectToEmail } from "../utils/commonFunctions.js";
 
 const router = useRouter();
 const route = useRoute();
