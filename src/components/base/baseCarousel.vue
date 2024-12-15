@@ -87,41 +87,60 @@ const cranes = reactive([
     image: "/public/image/crane-1.png",
   },
   {
-    name: "LR 1750-9.1",
-    capacity: "750 tonnes",
-    mainBoom: { value: "140m", label: "Main Boom" },
-    jib: { value: "90m", label: "JIB" },
-    luffing: { value: "105m", label: "Luffing" },
-    totalBoom: { value: "335m", label: "Total Boom" },
+    name: "LTM 1300-6.2",
+    capacity: "300 tonnes",
+    mainBoom: { value: "78m", label: "Main Boom" },
+    jib: { value: "70m", label: "JIB" },
+    luffing: { value: "42m", label: "Luffing" },
+    totalBoom: { value: "190m", label: "Total Boom" },
     image: "/public/image/crane-1.png",
   },
   {
-    name: "LR 1750-9.1",
-    capacity: "750 tonnes",
-    mainBoom: { value: "140m", label: "Main Boom" },
-    jib: { value: "90m", label: "JIB" },
-    luffing: { value: "105m", label: "Luffing" },
-    totalBoom: { value: "335m", label: "Total Boom" },
+    name: "LTM 1300-6.2",
+    capacity: "300 tonnes",
+    mainBoom: { value: "78m", label: "Main Boom" },
+    jib: { value: "70m", label: "JIB" },
+    luffing: { value: "42m", label: "Luffing" },
+    totalBoom: { value: "190m", label: "Total Boom" },
     image: "/public/image/crane-1.png",
   },
   {
-    name: "LR 1750-9.1",
-    capacity: "750 tonnes",
-    mainBoom: { value: "140m", label: "Main Boom" },
-    jib: { value: "90m", label: "JIB" },
-    luffing: { value: "105m", label: "Luffing" },
-    totalBoom: { value: "335m", label: "Total Boom" },
+    name: "LTM 1300-6.2",
+    capacity: "300 tonnes",
+    mainBoom: { value: "78m", label: "Main Boom" },
+    jib: { value: "70m", label: "JIB" },
+    luffing: { value: "42m", label: "Luffing" },
+    totalBoom: { value: "190m", label: "Total Boom" },
     image: "/public/image/crane-1.png",
   },
   {
-    name: "LR 1750-9.1",
-    capacity: "750 tonnes",
-    mainBoom: { value: "140m", label: "Main Boom" },
-    jib: { value: "90m", label: "JIB" },
-    luffing: { value: "105m", label: "Luffing" },
-    totalBoom: { value: "335m", label: "Total Boom" },
+    name: "LTM 1300-6.2",
+    capacity: "300 tonnes",
+    mainBoom: { value: "78m", label: "Main Boom" },
+    jib: { value: "70m", label: "JIB" },
+    luffing: { value: "42m", label: "Luffing" },
+    totalBoom: { value: "190m", label: "Total Boom" },
     image: "/public/image/crane-1.png",
   },
+  {
+    name: "LTM 1300-6.2",
+    capacity: "300 tonnes",
+    mainBoom: { value: "78m", label: "Main Boom" },
+    jib: { value: "70m", label: "JIB" },
+    luffing: { value: "42m", label: "Luffing" },
+    totalBoom: { value: "190m", label: "Total Boom" },
+    image: "/public/image/crane-1.png",
+  },
+  {
+    name: "LTM 1300-6.2",
+    capacity: "300 tonnes",
+    mainBoom: { value: "78m", label: "Main Boom" },
+    jib: { value: "70m", label: "JIB" },
+    luffing: { value: "42m", label: "Luffing" },
+    totalBoom: { value: "190m", label: "Total Boom" },
+    image: "/public/image/crane-1.png",
+  },
+  // Add other cranes here...
 ]);
 
 const emblaRoot = ref(null);
@@ -129,42 +148,68 @@ const emblaApi = ref(null);
 const isPlaying = ref(true);
 const progress = ref(0);
 
-const autoplayDelay = 4000;
+const autoplayDelay = 4000; // 4 seconds for autoplay
 let autoplayInterval = null;
 
+// Initialize the carousel
 const initCarousel = () => {
   emblaApi.value = EmblaCarousel(emblaRoot.value, { loop: true });
+
+  // Update progress on scroll
+  emblaApi.value.on("scroll", () => {
+    updateProgress();
+  });
+
+  // Restart autoplay when slide changes
+  emblaApi.value.on("select", () => {
+    if (isPlaying.value) resetAutoplay();
+  });
+
   startAutoplay();
 };
 
+// Start the autoplay interval
 const startAutoplay = () => {
   autoplayInterval = setInterval(() => {
-    if (emblaApi.value) {
-      emblaApi.value.scrollNext();
-      updateProgress();
-    }
+    emblaApi.value?.scrollNext();
   }, autoplayDelay);
 };
 
+// Stop autoplay
 const stopAutoplay = () => {
   clearInterval(autoplayInterval);
-  progress.value = 0;
 };
 
+// Reset autoplay interval
+const resetAutoplay = () => {
+  stopAutoplay();
+  startAutoplay();
+};
+
+// Update progress based on the carousel scroll position
 const updateProgress = () => {
-  progress.value = (progress.value + 1 / (autoplayDelay / 16)) % 1;
+  if (emblaApi.value) {
+    const scrollProgress = emblaApi.value.scrollProgress();
+    progress.value = scrollProgress; // Returns a value between 0 and 1
+  }
 };
 
+// Toggle autoplay on/off
 const toggleAutoplay = () => {
   isPlaying.value = !isPlaying.value;
-  if (isPlaying.value) startAutoplay();
-  else stopAutoplay();
+  if (isPlaying.value) {
+    startAutoplay();
+  } else {
+    stopAutoplay();
+  }
 };
 
+// Scroll to the previous slide
 const scrollPrev = () => {
   emblaApi.value?.scrollPrev();
 };
 
+// Scroll to the next slide
 const scrollNext = () => {
   emblaApi.value?.scrollNext();
 };
