@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-[128px] pb-[160px] px-[64px] flex items-center justify-center">
+  <div class="pt-[128px] px-[64px] flex items-center justify-center">
     <div class="max-w-[930px] text-center">
       <div
         class="about-section-title font-roslindale text-[70px] text-[#234a76] dark:text-[#ffffff] flex items-center justify-center flex-wrap mb-[48px]"
