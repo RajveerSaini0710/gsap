@@ -1,6 +1,10 @@
 <template>
   <div class="relative overflow-hidden backdrop-blur-sm border-2 rounded-lg">
-    <div class="relative aspect-video w-full overflow-hidden">
+    <!-- <GlowBorder
+    class="relative overflow-hidden backdrop-blur-sm"
+    :color="['#A07CFE', '#FE8FB5', '#FF4057']"
+  > -->
+    <div class="relative aspect-video w-full overflow-hidden p-3">
       <img
         :src="crane.image"
         :alt="`${crane.name} crane`"
@@ -29,12 +33,14 @@
         </div>
       </div>
     </div>
+    <!-- </GlowBorder> -->
   </div>
 </template>
 
 <script setup>
 import { Download } from "lucide-vue-next";
 import { computed } from "vue";
+// import GlowBorder from "../inspiraUi/glowBorder.vue";
 
 const props = defineProps({
   crane: {
