@@ -17,7 +17,7 @@
       <baseButton
         text="WHATSAPP"
         :isLoading="false"
-        @click="router.push('/service')"
+        @click="sendWhatsAppMessage"
       />
     </div>
     <div
@@ -57,7 +57,10 @@ import { onMounted, watch } from "vue";
 import baseButton from "./base/baseButton.vue";
 import { useDark, useToggle } from "@vueuse/core";
 import { commonVariables } from "../assets/variables/commonVariables.js";
-import { redirectToEmail } from "../utils/commonFunctions.js";
+import {
+  redirectToEmail,
+  sendWhatsAppMessage,
+} from "../utils/commonFunctions.js";
 
 const router = useRouter();
 const route = useRoute();

@@ -24,19 +24,20 @@
               href="https://facebook.com"
               class="transition-colors hover:text-red-500"
             >
-              <FacebookIcon class="h-5 w-5" />
+              <FacebookIcon class="h-6 w-6" />
             </a>
             <a
               href="https://twitter.com"
               class="transition-colors hover:text-red-500"
             >
-              <TwitterIcon class="h-5 w-5" />
+              <TwitterIcon class="h-6 w-6" />
             </a>
             <a
-              href="https://instagram.com"
+              href="#"
               class="transition-colors hover:text-red-500"
+              @click.prevent="sendWhatsAppMessage"
             >
-              <InstagramIcon class="h-5 w-5" />
+              <MessageCircleMore class="h-6 w-6" />
             </a>
           </div>
         </div>
@@ -191,11 +192,14 @@ import {
   MapPinIcon,
   FacebookIcon,
   TwitterIcon,
-  InstagramIcon,
+  MessageCircleMore,
 } from "lucide-vue-next";
 import { RouterLink } from "vue-router";
 import { useDark } from "@vueuse/core";
-import { redirectToEmail } from "../utils/commonFunctions.js";
+import {
+  redirectToEmail,
+  sendWhatsAppMessage,
+} from "../utils/commonFunctions.js";
 
 const isDark = useDark();
 </script>
