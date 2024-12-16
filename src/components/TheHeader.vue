@@ -14,6 +14,11 @@
         :isLoading="false"
         @click="router.push('/service')"
       />
+      <baseButton
+        text="WHATSAPP"
+        :isLoading="false"
+        @click="router.push('/service')"
+      />
     </div>
     <div
       class="text-[32px] font-roslindale cursor-pointer w-full flex items-center justify-center"
