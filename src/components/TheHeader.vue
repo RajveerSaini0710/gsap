@@ -1,7 +1,13 @@
 <template>
+  <span class="text-red-500">{{ screenWidth }}</span>
+  <div v-if="screenWidth < 780"></div>
   <div
-    class="w-full flex justify-between items-center px-[64px] h-[64px] fixed top-0 backdrop-filter backdrop-blur-lg header z-[100]"
-    :class="isDark ? 'header-bg-black' : 'header-bg-white'"
+    v-else
+    class="w-full flex justify-between items-center h-[64px] fixed top-0 backdrop-filter backdrop-blur-lg header z-[100]"
+    :class="[
+      screenWidth > 780 && screenWidth < 900 ? 'px-[30px] ' : 'px-[64px]',
+      isDark ? 'header-bg-black' : 'header-bg-white',
+    ]"
   >
     <div class="flex items-center justify-between gap-2">
       <baseButton
@@ -21,7 +27,10 @@
       />
     </div>
     <div
-      class="text-[32px] font-roslindale cursor-pointer w-full flex items-center justify-center"
+      class="font-roslindale cursor-pointer w-full flex items-center justify-center"
+      :class="
+        screenWidth > 780 && screenWidth < 900 ? 'text-[25px]' : 'text-[32px]'
+      "
       @click="logoClick"
     >
       Saini &nbsp;
@@ -52,7 +61,7 @@
 <script setup>
 import { gsap } from "gsap";
 import { useRouter, useRoute } from "vue-router";
-import { onMounted, watch } from "vue";
+import { onMounted, watch, ref, onBeforeUnmount } from "vue";
 import baseButton from "./base/baseButton.vue";
 import { useDark, useToggle } from "@vueuse/core";
 import { commonVariables } from "../assets/variables/commonVariables.js";
@@ -61,18 +70,29 @@ import {
   sendWhatsAppMessage,
 } from "../utils/commonFunctions.js";
 
+const screenWidth = ref(0);
 const router = useRouter();
 const route = useRoute();
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 
+const updateScreenSize = () => {
+  screenWidth.value = window.innerWidth;
+};
+
 onMounted(() => {
+  updateScreenSize();
+  window.addEventListener("resize", updateScreenSize);
   commonVariables.value.darkMode = isDark.value;
   const hasVisited = sessionStorage.getItem("homepage-visited");
 
   if ((route.path == "/home" || route.path == "/") && !hasVisited) {
     runHeaderAnimation();
   }
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", updateScreenSize);
 });
 
 const runHeaderAnimation = () => {
