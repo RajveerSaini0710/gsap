@@ -18,22 +18,19 @@
     <slot name="buttonContent">
       <span v-if="!isLoading && text">{{ text }}</span>
     </slot>
-    <span v-if="icon && iconPosition === 'right'" :class="icon" class="ml-2">
-      <img
-        width="18"
-        height="18"
-        v-if="icon.name"
-        :src="getIconSrc(icon.name)"
-        alt="icon"
-        class="max-w-fit bg-[#234a76] rounded-full"
-      />
+    <span v-if="iconPosition === 'right'" :class="icon" class="ml-2">
+      <component :is="isDark ? Sun : Moon" class="h-4 w-4 darkModeIcon" />
     </span>
   </button>
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { gsap } from "gsap";
+import { computed, watch } from "vue";
+import { Sun, Moon } from "lucide-vue-next";
+import { useDark } from "@vueuse/core";
 
+const isDark = useDark();
 const props = defineProps({
   isLoading: {
     type: Boolean,
@@ -60,6 +57,39 @@ const props = defineProps({
     default: "primary", // options: 'primary', 'secondary', 'success', 'danger'
   },
 });
+
+watch(
+  () => isDark.value,
+  (newValue) => {
+    if (newValue) {
+      gsap.from(".darkModeIcon", {
+        duration: 1,
+        opacity: 0,
+        y: -70,
+        ease: "expo.out",
+      });
+      gsap.to(".darkModeIcon", {
+        duration: 1,
+        opacity: 1,
+        y: 0,
+        ease: "expo.out",
+      });
+    } else {
+      gsap.from(".darkModeIcon", {
+        duration: 1,
+        opacity: 0,
+        y: 70,
+        ease: "expo.out",
+      });
+      gsap.to(".darkModeIcon", {
+        duration: 1,
+        opacity: 1,
+        y: 0,
+        ease: "expo.out",
+      });
+    }
+  }
+);
 
 const buttonClasses = computed(() => {
   const baseClasses =

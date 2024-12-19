@@ -36,7 +36,6 @@
       <baseButton text="EMAIL" :isLoading="false" @click="redirectToEmail" />
 
       <baseButton
-        :icon="{ name: 'appeture' }"
         iconPosition="right"
         @click="handleToggleDark"
         :isLoading="false"
