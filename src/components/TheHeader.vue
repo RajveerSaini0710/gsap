@@ -21,8 +21,8 @@
       </div>
     </div>
     <div
-      v-if="isMenuOpen"
-      class="w-full h-screen absolute top-0 z-[100]"
+      v-show="isMenuOpen"
+      class="w-full h-screen absolute top-0 z-[100] mobileMenu"
       :class="isDark ? 'bg-black' : 'bg-white'"
     >
       <div
@@ -145,6 +145,20 @@ onBeforeUnmount(() => {
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
+
+watch(
+  () => isMenuOpen.value,
+  (newValue) => {
+    const menu = document.querySelector(".mobileMenu");
+    if (newValue) {
+      gsap.fromTo(
+        menu,
+        { opacity: 0, x: -100 },
+        { opacity: 1, x: 0, duration: 1.5, ease: "expo.out" }
+      );
+    }
+  }
+);
 
 const runHeaderAnimation = () => {
   const tl = gsap.timeline();
