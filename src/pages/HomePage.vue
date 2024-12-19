@@ -3,7 +3,7 @@
     <HeaderCard :title="homePageTitle" videoUrl="/video/cranesWorking.mp4" />
     <AboutSection />
     <BaseCarousel />
-    <ArticleSection />
+    <!-- <ArticleSection /> -->
     <BaseLine />
     <TheFooter />
   </div>
@@ -16,7 +16,7 @@ import TheFooter from "../components/TheFooter.vue";
 import BaseCarousel from "../components/base/baseCarousel.vue";
 import HeaderCard from "../components/pageSection/headerCard.vue";
 import AboutSection from "../components/pageSection/aboutSection.vue";
-import ArticleSection from "../components/pageSection/articleSection.vue";
+// import ArticleSection from "../components/pageSection/articleSection.vue";
 
 const homePageTitle = ref([
   "👷🏽‍♂️",
