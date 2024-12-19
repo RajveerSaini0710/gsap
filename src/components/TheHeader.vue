@@ -36,11 +36,20 @@
       <div
         class="w-full flex flex-col items-start gap-10 font-roslindale mt-20 ml-8 text-[25px]"
       >
-        <div>ABOUT</div>
-        <div>SERVICES</div>
-        <div>WHATSAPP</div>
-        <div>CONTACT</div>
-        <div>EMAIL</div>
+        <div
+          v-for="(option, index) in [
+            { name: 'ABOUT', route: '/about-us' },
+            { name: 'SERVICES', route: '/service' },
+            { name: 'WHATSAPP', link: 'sendWhatsAppMessage' },
+            { name: 'CONTACT', route: '/contact-us' },
+            { name: 'EMAIL', link: 'redirectToEmail' },
+          ]"
+          :key="index"
+          :class="{ 'text-[#FF4057]': selectedOption === option.name }"
+          @click="selectOption(option)"
+        >
+          {{ option.name }}
+        </div>
       </div>
     </div>
   </div>
@@ -120,6 +129,7 @@ const screenWidth = ref(0);
 const router = useRouter();
 const route = useRoute();
 const isDark = useDark();
+const selectedOption = ref(null);
 const toggleDark = useToggle(isDark);
 const isMenuOpen = ref(false);
 
@@ -141,6 +151,19 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener("resize", updateScreenSize);
 });
+
+const selectOption = (option) => {
+  if (option.route) {
+    selectedOption.value = option.name;
+    router.push(option.route);
+    isMenuOpen.value = false;
+  } else {
+    selectedOption.value = option.name;
+    option.link === "sendWhatsAppMessage"
+      ? sendWhatsAppMessage()
+      : redirectToEmail();
+  }
+};
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
