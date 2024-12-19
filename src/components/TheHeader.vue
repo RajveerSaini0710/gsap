@@ -1,6 +1,51 @@
 <template>
-  <span class="text-red-500">{{ screenWidth }}</span>
-  <div v-if="screenWidth < 780"></div>
+  <!-- Mobile Header -->
+  <div
+    v-if="screenWidth < 780"
+    class="fixed top-0 w-full flex items-center justify-center backdrop-filter backdrop-blur-lg header z-[100]"
+  >
+    <div class="py-4 flex items-center justify-center w-full">
+      <div class="absolute left-1 ml-4">
+        <Menu v-if="!isMenuOpen" class="h-6 w-6" @click="toggleMenu" />
+      </div>
+      <div
+        class="font-roslindale cursor-pointer w-full flex items-center justify-center text-[28px]"
+        @click="logoClick"
+      >
+        Saini &nbsp;
+        <span class="text-[#FF4057]"> Lifters</span>
+      </div>
+      <div class="absolute right-1 mr-4">
+        <Sun v-if="isDark" class="h-6 w-6" @click="handleToggleDark" />
+        <Moon v-else class="h-6 w-6" @click="handleToggleDark" />
+      </div>
+    </div>
+    <div
+      v-if="isMenuOpen"
+      class="w-full h-screen absolute top-0 z-[100]"
+      :class="isDark ? 'bg-black' : 'bg-white'"
+    >
+      <div
+        class="font-roslindale cursor-pointer w-full flex items-center justify-start text-[28px] ml-8 py-[16px]"
+        @click="logoClick"
+      >
+        Saini &nbsp;
+        <span class="text-[#FF4057]"> Lifters</span>
+      </div>
+      <X class="w-6 h-6 absolute right-6 top-6" @click="toggleMenu" />
+      <div
+        class="w-full flex flex-col items-start gap-10 font-roslindale mt-20 ml-8 text-[25px]"
+      >
+        <div>ABOUT</div>
+        <div>SERVICES</div>
+        <div>WHATSAPP</div>
+        <div>CONTACT</div>
+        <div>EMAIL</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Desktop Header -->
   <div
     v-else
     class="w-full flex justify-between items-center h-[64px] fixed top-0 backdrop-filter backdrop-blur-lg header z-[100]"
@@ -65,6 +110,7 @@ import { onMounted, watch, ref, onBeforeUnmount } from "vue";
 import baseButton from "./base/baseButton.vue";
 import { useDark, useToggle } from "@vueuse/core";
 import { commonVariables } from "../assets/variables/commonVariables.js";
+import { Menu, X, Sun, Moon } from "lucide-vue-next";
 import {
   redirectToEmail,
   sendWhatsAppMessage,
@@ -75,6 +121,7 @@ const router = useRouter();
 const route = useRoute();
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
+const isMenuOpen = ref(false);
 
 const updateScreenSize = () => {
   screenWidth.value = window.innerWidth;
@@ -94,6 +141,10 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener("resize", updateScreenSize);
 });
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
 
 const runHeaderAnimation = () => {
   const tl = gsap.timeline();
