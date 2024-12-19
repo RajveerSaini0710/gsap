@@ -4,54 +4,58 @@
     v-if="screenWidth < 780"
     class="fixed top-0 w-full flex items-center justify-center backdrop-filter backdrop-blur-lg header z-[100]"
   >
-    <div class="py-4 flex items-center justify-center w-full">
-      <div class="absolute left-1 ml-4">
-        <Menu v-if="!isMenuOpen" class="h-6 w-6" @click="toggleMenu" />
-      </div>
-      <div
-        class="font-roslindale cursor-pointer w-full flex items-center justify-center text-[28px]"
-        @click="logoClick"
-      >
-        Saini &nbsp;
-        <span class="text-[#FF4057]"> Lifters</span>
-      </div>
-      <div class="absolute right-1 mr-4">
-        <Sun v-if="isDark" class="h-6 w-6" @click="handleToggleDark" />
-        <Moon v-else class="h-6 w-6" @click="handleToggleDark" />
-      </div>
-    </div>
-    <div
-      v-show="isMenuOpen"
-      class="w-full h-screen absolute top-0 z-[100] mobileMenu"
-      :class="isDark ? 'bg-black' : 'bg-white'"
-    >
-      <div
-        class="font-roslindale cursor-pointer w-full flex items-center justify-start text-[28px] ml-8 py-[16px]"
-        @click="logoClick"
-      >
-        Saini &nbsp;
-        <span class="text-[#FF4057]"> Lifters</span>
-      </div>
-      <X class="w-6 h-6 absolute right-6 top-6" @click="toggleMenu" />
-      <div
-        class="w-full flex flex-col items-start gap-10 font-roslindale mt-20 ml-8 text-[25px]"
-      >
+    <transition name="fade">
+      <div class="py-4 flex items-center justify-center w-full">
+        <div class="absolute left-1 ml-4">
+          <Menu v-if="!isMenuOpen" class="h-6 w-6" @click="toggleMenu" />
+        </div>
         <div
-          v-for="(option, index) in [
-            { name: 'ABOUT', route: '/about-us' },
-            { name: 'SERVICES', route: '/service' },
-            { name: 'WHATSAPP', link: 'sendWhatsAppMessage' },
-            { name: 'CONTACT', route: '/contact-us' },
-            { name: 'EMAIL', link: 'redirectToEmail' },
-          ]"
-          :key="index"
-          :class="{ 'text-[#FF4057]': selectedOption === option.name }"
-          @click="selectOption(option)"
+          class="font-roslindale cursor-pointer w-full flex items-center justify-center text-[28px]"
+          @click="logoClick"
         >
-          {{ option.name }}
+          Saini &nbsp;
+          <span class="text-[#FF4057]"> Lifters</span>
+        </div>
+        <div class="absolute right-1 mr-4">
+          <Sun v-if="isDark" class="h-6 w-6" @click="handleToggleDark" />
+          <Moon v-else class="h-6 w-6" @click="handleToggleDark" />
         </div>
       </div>
-    </div>
+    </transition>
+    <transition name="mobileMenu">
+      <div
+        v-show="isMenuOpen"
+        class="w-full h-screen absolute top-0 z-[100] mobileMenu"
+        :class="isDark ? 'bg-black' : 'bg-white'"
+      >
+        <div
+          class="font-roslindale cursor-pointer w-full flex items-center justify-start text-[28px] ml-8 py-[16px]"
+          @click="logoClick"
+        >
+          Saini &nbsp;
+          <span class="text-[#FF4057]"> Lifters</span>
+        </div>
+        <X class="w-6 h-6 absolute right-6 top-6" @click="toggleMenu" />
+        <div
+          class="w-full flex flex-col items-start gap-10 font-roslindale mt-20 ml-8 text-[25px]"
+        >
+          <div
+            v-for="(option, index) in [
+              { name: 'ABOUT', route: '/about-us' },
+              { name: 'SERVICES', route: '/service' },
+              { name: 'WHATSAPP', link: 'sendWhatsAppMessage' },
+              { name: 'CONTACT', route: '/contact-us' },
+              { name: 'EMAIL', link: 'redirectToEmail' },
+            ]"
+            :key="index"
+            :class="{ 'text-[#FF4057]': selectedOption === option.name }"
+            @click="selectOption(option)"
+          >
+            {{ option.name }}
+          </div>
+        </div>
+      </div>
+    </transition>
   </div>
 
   <!-- Desktop Header -->
@@ -169,20 +173,6 @@ const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
 
-watch(
-  () => isMenuOpen.value,
-  (newValue) => {
-    const menu = document.querySelector(".mobileMenu");
-    if (newValue) {
-      gsap.fromTo(
-        menu,
-        { opacity: 0, x: -100 },
-        { opacity: 1, x: 0, duration: 1.5, ease: "expo.out" }
-      );
-    }
-  }
-);
-
 const runHeaderAnimation = () => {
   const tl = gsap.timeline();
 
@@ -253,5 +243,32 @@ watch(
 
 .header-bg-black {
   background-color: rgb(22 23 25 / 50%);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.8s ease-in-out;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.mobileMenu-enter-active,
+.mobileMenu-leave-active {
+  transition: all 0.8s ease-out;
+}
+.mobileMenu-enter-from {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.mobileMenu-leave-to {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.mobileMenu-enter-to,
+.mobileMenu-leave-from {
+  opacity: 1;
+  transform: translateX(0);
 }
 </style>
