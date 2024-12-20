@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen pt-28 pb-36">
+  <div class="pt-28 pb-36">
     <div class="container">
       <div class="relative mx-auto max-w-7xl px-4">
         <div ref="emblaRoot" class="overflow-hidden">
