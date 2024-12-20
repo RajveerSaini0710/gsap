@@ -1,6 +1,6 @@
 <template>
   <div
-    class="header-card relative flex items-center justify-center top-[74px] md:top-[65px] h-[680px] mb-[100px]"
+    class="header-card relative flex items-center justify-center top-[74px] md:top-[65px] h-[680px] mb-[40px] md:mb-[100px]"
   >
     <div
       class="absolute top-0 left-0 z-30 px-[25px] md:px-[64px] pb-[64px] font-roslindale w-full h-[680px] flex flex-col items-center justify-center"
