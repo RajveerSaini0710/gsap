@@ -1,6 +1,7 @@
 <template>
   <div
     class="base-line w-full bg-[#ff4056] flex justify-center items-center overflow-hidden"
+    @click="router.push('/contact-us')"
   >
     <div
       class="dark:text-[#ffffff] text-[30px] font-serif text-black py-6 font-extrabold flex items-center justify-start cursor-pointer whitespace-nowrap scroll-animation"
@@ -14,6 +15,9 @@
 <script setup>
 import { commonVariables } from "../assets/variables/commonVariables";
 import { Construction } from "lucide-vue-next";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 </script>
 
 <style scoped>
