@@ -1,17 +1,19 @@
 <template>
-  <div class="pt-[128px] px-[64px] flex items-center justify-center">
+  <div
+    class="pt-[128px] px-[15px] md:px-[64px] flex items-center justify-center"
+  >
     <div class="max-w-[930px] text-center">
       <div
-        class="about-section-title font-roslindale text-[70px] text-[#234a76] dark:text-[#ffffff] flex items-center justify-center flex-wrap mb-[48px]"
+        class="about-section-title font-roslindale text-[30px] md:text-[70px] text-[#234a76] dark:text-[#ffffff] flex items-center justify-center flex-wrap mb-[48px]"
       >
-        <div class="mr-[16px] about-title-img-1">
+        <div
+          class="w-full flex justify-center mb-5 md:mb-0 md:w-auto md:mr-[16px] about-title-img-1"
+        >
           <img
             src="../../assets/images/strength.jpg"
             alt="img1"
             loading="lazy"
-            width="110"
-            height="80"
-            class="rounded-[12px]"
+            class="rounded-[12px] w-[140px] md:w-[110px]"
           />
         </div>
         <span class="text-[#FF4057]">&nbsp;&nbsp;Strength&nbsp;</span>
@@ -27,14 +29,14 @@
           :key="index"
           >{{ dot }}</span
         >
-        <div class="ml-[20px] about-title-img-3">
+        <div
+          class="w-full mt-5 md:mt-0 md:w-auto md:ml-[20px] about-title-img-3"
+        >
           <img
             src="../../assets/images/rise.jpg"
             alt="img3"
             loading="lazy"
-            width="120"
-            height="100"
-            class="rounded-[12px]"
+            class="rounded-[12px] w-full md:w-[120px]"
           />
         </div>
       </div>
