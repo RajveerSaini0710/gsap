@@ -147,7 +147,7 @@
         <div class="space-y-4 col-span-3">
           <h3 class="text-lg font-semibold">Location</h3>
           <div
-            class="w-full h-48 rounded-lg overflow-hidden transition-all grayscale"
+            class="w-full h-48 rounded-lg overflow-hidden transition-all md:grayscale"
             :class="
               isDark
                 ? 'bg-gray-800 hover:grayscale-0'
