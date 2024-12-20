@@ -221,6 +221,7 @@ const handleToggleDark = () => {
 
 const logoClick = () => {
   router.push("/home");
+  isMenuOpen.value = !isMenuOpen.value;
 };
 
 watch(
