@@ -61,7 +61,7 @@
   <!-- Desktop Header -->
   <div
     v-else
-    class="w-full flex justify-between items-center h-[64px] fixed top-0 backdrop-filter backdrop-blur-lg header z-[100]"
+    class="w-full flex justify-between items-center h-[74px] fixed top-0 backdrop-filter backdrop-blur-lg header z-[100]"
     :class="[
       commonVariables.screenWidth > 780 && commonVariables.screenWidth < 900
         ? 'px-[30px] '
