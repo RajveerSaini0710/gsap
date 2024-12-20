@@ -3,12 +3,12 @@
     class="header-card relative flex items-center justify-center top-[65px] h-[680px] mb-[100px]"
   >
     <div
-      class="absolute top-0 left-0 z-30 px-[64px] pb-[64px] font-roslindale w-full h-[680px] flex flex-col items-center justify-center"
+      class="absolute top-0 left-0 z-30 px-[25px] md:px-[64px] pb-[64px] font-roslindale w-full h-[680px] flex flex-col items-center justify-center"
     >
       <div class="flex flex-1 flex-col items-center justify-center">
         <div>
           <div
-            class="max-w-[900px] flex items-center justify-center gap-6 flex-wrap leading-[60px]"
+            class="max-w-[900px] flex items-center justify-center gap-3 md:gap-6 flex-wrap leading-[40px] md:leading-[60px]"
           >
             <div
               v-for="(word, index) in props.title"
@@ -55,7 +55,7 @@
         muted
         playsinline
         autoplay
-        class="video-player object-cover rounded-[34px]"
+        class="video-player object-cover md:rounded-[34px]"
       >
         <source :src="props.videoUrl" type="video/mp4" data-wf-ignore="true" />
         <source
@@ -78,6 +78,7 @@ import { onMounted, onBeforeUnmount } from "vue";
 import { useRoute } from "vue-router";
 import { ChevronDown } from "lucide-vue-next";
 import TextGenerate from "../inspiraUi/textGenerate.vue";
+import { commonVariables } from "../../assets/variables/commonVariables.js";
 
 const props = defineProps({
   title: {
@@ -199,17 +200,29 @@ const scrollToElement = (hash) => {
   transition: font-size 0.3s ease;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 500px) {
+  .video-container {
+    width: 100%; /* 95% width for smaller screens like iPads and phones */
+  }
+  .title-text {
+    font-size: 30px; /* Slightly smaller font size for smaller screens */
+  }
+  .header-card-overlay {
+    border-radius: 0px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 1024px) {
   .video-container {
     width: 95%; /* 95% width for smaller screens like iPads and phones */
   }
 
   .title-text {
-    font-size: 70px; /* Slightly smaller font size for smaller screens */
+    font-size: 50px; /* Slightly smaller font size for smaller screens */
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .video-container {
     width: 90%; /* 90% width for laptops and larger screens */
   }

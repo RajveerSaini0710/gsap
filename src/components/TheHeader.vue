@@ -1,7 +1,7 @@
 <template>
   <!-- Mobile Header -->
   <div
-    v-if="screenWidth < 780"
+    v-if="commonVariables.screenWidth < 780"
     class="fixed top-0 w-full flex items-center justify-center backdrop-filter backdrop-blur-lg header z-[100]"
   >
     <transition name="fade">
@@ -63,7 +63,9 @@
     v-else
     class="w-full flex justify-between items-center h-[64px] fixed top-0 backdrop-filter backdrop-blur-lg header z-[100]"
     :class="[
-      screenWidth > 780 && screenWidth < 900 ? 'px-[30px] ' : 'px-[64px]',
+      commonVariables.screenWidth > 780 && commonVariables.screenWidth < 900
+        ? 'px-[30px] '
+        : 'px-[64px]',
       isDark ? 'header-bg-black' : 'header-bg-white',
     ]"
   >
@@ -87,7 +89,9 @@
     <div
       class="font-roslindale cursor-pointer w-full flex items-center justify-center"
       :class="
-        screenWidth > 780 && screenWidth < 900 ? 'text-[25px]' : 'text-[32px]'
+        commonVariables.screenWidth > 780 && commonVariables.screenWidth < 900
+          ? 'text-[25px]'
+          : 'text-[32px]'
       "
       @click="logoClick"
     >
@@ -129,7 +133,6 @@ import {
   sendWhatsAppMessage,
 } from "../utils/commonFunctions.js";
 
-const screenWidth = ref(0);
 const router = useRouter();
 const route = useRoute();
 const isDark = useDark();
@@ -138,7 +141,7 @@ const toggleDark = useToggle(isDark);
 const isMenuOpen = ref(false);
 
 const updateScreenSize = () => {
-  screenWidth.value = window.innerWidth;
+  commonVariables.value.screenWidth = window.innerWidth;
 };
 
 onMounted(() => {
