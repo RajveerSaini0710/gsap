@@ -25,6 +25,15 @@ const router = createRouter({
       component: () => import("./pages/ServicePage.vue"),
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      // When navigating back, restore the saved scroll position
+      return savedPosition;
+    } else {
+      // For new pages, scroll to the top
+      return { top: 0 };
+    }
+  },
 });
 
 export default router;
