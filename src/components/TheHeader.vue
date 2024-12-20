@@ -10,7 +10,7 @@
           <Menu v-if="!isMenuOpen" class="h-6 w-6" @click="toggleMenu" />
         </div>
         <div
-          class="font-roslindale cursor-pointer w-full flex items-center justify-center text-[28px]"
+          class="font-roslindale cursor-pointer w-fit flex items-center justify-center text-[28px]"
           @click="logoClick"
         >
           Saini &nbsp;
