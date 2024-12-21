@@ -6,7 +6,7 @@
     <div
       class="dark:text-[#ffffff] text-[30px] font-serif text-black py-6 font-extrabold flex items-center justify-start cursor-pointer whitespace-nowrap scroll-animation"
     >
-      <Construction class="ml-3 w-12 h-12 mr-3 md:mr-6 flex-shrink-0" />
+      <Construction class="ml-3 w-12 h-12 mr-4 md:mr-6 flex-shrink-0" />
       Elevate Your Next Project With Our Best Heavy Lifting Services.
     </div>
   </div>
@@ -41,7 +41,7 @@ const router = useRouter();
 @media (max-width: 1024px) {
   /* Adjust the breakpoint as needed */
   .scroll-animation {
-    animation: scroll 20s linear infinite;
+    animation: scroll 15s linear infinite;
   }
 }
 </style>

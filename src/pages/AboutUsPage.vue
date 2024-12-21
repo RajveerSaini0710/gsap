@@ -35,7 +35,7 @@
             </div>
           </div>
         </div>
-        <div class="relative h-[400px]">
+        <div class="relative h-[400px] w-full flex justify-center items-center">
           <img
             src="../assets//images/crane-1.png"
             alt="Crane operation showcase"

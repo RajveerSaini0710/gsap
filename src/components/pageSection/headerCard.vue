@@ -32,7 +32,7 @@
         </div>
         <div
           v-if="props.subTitle"
-          class="text-white mt-4 text-2xl w-[60%] text-center"
+          class="text-white mt-4 text-2xl md:w-[60%] text-center"
         >
           <TextGenerate :words="props.subTitle" />
         </div>
