@@ -41,11 +41,15 @@ onMounted(() => {
     runPreloaderAnimation();
   }
 });
-
 const runPreloaderAnimation = () => {
+  // Calculate responsive font sizes
+  const isMobile = window.innerWidth < 600;
+  const largeFontSize = isMobile ? "50px" : "100px";
+  const smallFontSize = isMobile ? "20px" : "30px";
+
   tl.fromTo(
     ".companyFirstName",
-    { y: 200, opacity: 0.3 },
+    { y: 200, opacity: 0.3, fontSize: largeFontSize },
     {
       duration: 1,
       y: 0,
@@ -55,7 +59,7 @@ const runPreloaderAnimation = () => {
   );
   tl.fromTo(
     ".companyLastName",
-    { y: 200, opacity: 0.3 },
+    { y: 200, opacity: 0.3, fontSize: largeFontSize },
     {
       duration: 1,
       y: 0,
@@ -65,43 +69,32 @@ const runPreloaderAnimation = () => {
     },
     "-=1.5"
   );
-  tl.fromTo(
-    ".companyFirstName",
-    { fontSize: "100px" },
-    {
-      duration: 1,
-      fontSize: "30px",
-    }
-  );
-  tl.fromTo(
+  tl.to(".companyFirstName", {
+    duration: 1,
+    fontSize: smallFontSize,
+  });
+  tl.to(
     ".companyLastName",
-    { fontSize: "100px" },
     {
       duration: 1,
-      fontSize: "30px",
+      fontSize: smallFontSize,
     },
     "-=1"
   );
-  tl.fromTo(
+  tl.to(
     ".spacing",
-    { margin: "20px" },
     {
       duration: 1,
-      margin: "4px",
+      margin: isMobile ? "2px" : "4px",
     },
     "-=1"
   );
 
-  tl.fromTo(
+  tl.to(
     ".main-div",
-    {
-      opacity: 1,
-      y: 0,
-    },
     {
       opacity: 0,
       duration: 1.8,
-
       y: -600,
     },
     "-=1"

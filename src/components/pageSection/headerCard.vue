@@ -106,7 +106,7 @@ onMounted(() => {
 
   if (route.path == "/home" && !hasVisited) {
     runAnimations();
-    sessionStorage.setItem("homepage-visited", "true");
+    // sessionStorage.setItem("homepage-visited", "true");
   }
 
   gsap.from(".chevron-down", {
