@@ -68,6 +68,7 @@ import BaseButton from "../base/baseButton.vue";
 import { gsap } from "gsap";
 import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
+import { commonVariables } from "../../assets/variables/commonVariables";
 
 const router = useRouter();
 const dots = ref([".", ".", ".", " "]);
@@ -118,16 +119,18 @@ onMounted(() => {
     return imgTl;
   };
 
-  const img1Tl = createAnimationTimeline(img1);
-  const img3Tl = createAnimationTimeline(img3);
+  if (commonVariables.value.screenWidth > 600) {
+    const img1Tl = createAnimationTimeline(img1);
+    const img3Tl = createAnimationTimeline(img3);
 
-  // Add event listeners for img1
-  img1.addEventListener("mouseenter", () => img1Tl.play());
-  img1.addEventListener("mouseleave", () => img1Tl.reverse());
+    // Add event listeners for img1
+    img1.addEventListener("mouseenter", () => img1Tl.play());
+    img1.addEventListener("mouseleave", () => img1Tl.reverse());
 
-  // Add event listeners for img3
-  img3.addEventListener("mouseenter", () => img3Tl.play());
-  img3.addEventListener("mouseleave", () => img3Tl.reverse());
+    // Add event listeners for img3
+    img3.addEventListener("mouseenter", () => img3Tl.play());
+    img3.addEventListener("mouseleave", () => img3Tl.reverse());
+  }
 });
 </script>
 
