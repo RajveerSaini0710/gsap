@@ -11,7 +11,7 @@
         </div>
         <div
           class="font-roslindale cursor-pointer w-fit flex items-center justify-center text-[28px]"
-          @click="logoClick"
+          @click="router.push('/home')"
         >
           Saini &nbsp;
           <span class="text-[#FF4057]"> Lifters</span>
@@ -150,7 +150,7 @@ onMounted(() => {
   commonVariables.value.darkMode = isDark.value;
   const hasVisited = sessionStorage.getItem("homepage-visited");
 
-  if ((route.path == "/home" || route.path == "/") && !hasVisited) {
+  if (!hasVisited) {
     runHeaderAnimation();
   }
 });
