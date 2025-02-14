@@ -74,11 +74,10 @@
 
 <script setup>
 import { gsap } from "gsap";
-import { onMounted, onBeforeUnmount } from "vue";
+import { onMounted } from "vue";
 import { useRoute } from "vue-router";
 import { ChevronDown } from "lucide-vue-next";
 import TextGenerate from "../inspiraUi/textGenerate.vue";
-import { commonVariables } from "../../assets/variables/commonVariables.js";
 
 const props = defineProps({
   title: {
@@ -122,14 +121,14 @@ const runAnimations = () => {
   tl.from(".header-card", {
     opacity: 0,
     duration: 2.5,
-    delay: 2.5,
+    delay: 2,
     y: 600,
     backdropFilter: "blur(100px)",
     scale: 0,
     ease: "circ.out",
   }).to(".header-card", {
     opacity: 1,
-    duration: 2.5,
+    duration: 2,
     y: 0,
     backdropFilter: "blur(0px)",
     scale: 1,
