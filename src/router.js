@@ -3,9 +3,8 @@ import { createRouter, createWebHistory } from "vue-router";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: "/", redirect: "/home" },
     {
-      path: "/home",
+      path: "/",
       name: "home",
       component: () => import("./pages/HomePage.vue"),
     },
