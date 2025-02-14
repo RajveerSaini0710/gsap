@@ -15,7 +15,7 @@ const NotFound = defineComponent({});
     <div class="text-center space-y-8 max-w-2xl px-4">
       <!-- 404 Number -->
       <div
-        class="md:text-[12rem] text-[8rem] font-bold leading-none tracking-tight text-[#FF4057] select-none"
+        class="md:text-[12rem] text-[8rem] font-bold leading-none tracking-tight text-[#FF4057] select-none font-roslindale"
       >
         404
       </div>
@@ -23,7 +23,7 @@ const NotFound = defineComponent({});
       <!-- Text Content -->
       <div class="space-y-4">
         <h1 class="text-4xl font-bold tracking-tight">Page Not Found</h1>
-        <p class="text-xl text-muted-foreground max-w-lg mx-auto">
+        <p class="text-xl max-w-lg mx-auto">
           Nothing is too high or too heavy for us, but this page seems to have
           gone missing.
         </p>
