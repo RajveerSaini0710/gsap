@@ -6,7 +6,7 @@
   > -->
     <div class="relative aspect-video w-full overflow-hidden p-3">
       <img
-        :src="crane.image"
+        :src="getImg(crane.image)"
         :alt="`${crane.name} crane`"
         class="object-contain w-full h-full"
       />
@@ -40,6 +40,7 @@
 <script setup>
 import { Download } from "lucide-vue-next";
 import { computed } from "vue";
+import getImg from "../../utils/getImg";
 // import GlowBorder from "../inspiraUi/glowBorder.vue";
 
 const props = defineProps({

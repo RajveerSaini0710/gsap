@@ -75,7 +75,7 @@ const cranes = reactive([
     jib: { value: "21m", label: "JIB" },
     luffing: { value: "63m", label: "Luffing" },
     totalBoom: { value: "162m", label: "Total Boom" },
-    image: "../../assets/images/crane-1.png",
+    image: "crane-1.png",
   },
   {
     name: "XCMG QAY300",
@@ -84,7 +84,7 @@ const cranes = reactive([
     jib: { value: "86m", label: "JIB" },
     luffing: { value: "67m", label: "Luffing" },
     totalBoom: { value: "270m", label: "Total Boom" },
-    image: "../../assets/images/crane-2.png",
+    image: "crane-2.png",
   },
   {
     name: "XCMG QAY200",
@@ -93,7 +93,7 @@ const cranes = reactive([
     jib: { value: "56m", label: "JIB" },
     luffing: { value: "34m", label: "Luffing" },
     totalBoom: { value: "867m", label: "Total Boom" },
-    image: "../../assets/images/crane-4.png",
+    image: "crane-4.png",
   },
   {
     name: "GROVE GMK90",
@@ -102,7 +102,7 @@ const cranes = reactive([
     jib: { value: "24m", label: "JIB" },
     luffing: { value: "48m", label: "Luffing" },
     totalBoom: { value: "130m", label: "Total Boom" },
-    image: "../../assets/images/crane-5.png",
+    image: "crane-5.png",
   },
 ]);
 
