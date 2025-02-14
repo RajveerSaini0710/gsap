@@ -14,9 +14,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <PreLoader
-      v-if="!hasVisited && (route.path === '/' || route.path === '/home')"
-    ></PreLoader>
+    <PreLoader v-if="!hasVisited && route.path === '/'"></PreLoader>
     <div>
       <TheHeader />
       <router-view v-slot="slotProps">

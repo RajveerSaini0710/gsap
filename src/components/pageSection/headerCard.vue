@@ -104,7 +104,7 @@ const route = useRoute();
 onMounted(() => {
   const hasVisited = sessionStorage.getItem("homepage-visited");
 
-  if (route.path == "/home" && !hasVisited) {
+  if (route.path == "/" && !hasVisited) {
     runAnimations();
     // sessionStorage.setItem("homepage-visited", "true");
   }

@@ -11,7 +11,7 @@
         </div>
         <div
           class="font-roslindale cursor-pointer w-fit flex items-center justify-center text-[28px]"
-          @click="router.push('/home')"
+          @click="router.push('/')"
         >
           Saini &nbsp;
           <span class="text-[#FF4057]"> Lifters</span>
@@ -220,7 +220,7 @@ const handleToggleDark = () => {
 };
 
 const logoClick = () => {
-  router.push("/home");
+  router.push("/");
   isMenuOpen.value = !isMenuOpen.value;
 };
 
