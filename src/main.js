@@ -14,6 +14,10 @@ const lenis = new Lenis({
   smooth: true,
 });
 
+router.afterEach((to) => {
+  window.gtag("config", "G-G2G9X0Y0DG", { page_path: to.fullPath });
+});
+
 // Animation loop
 function raf(time) {
   lenis.raf(time);
