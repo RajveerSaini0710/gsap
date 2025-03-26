@@ -4,6 +4,7 @@ import App from "./App.vue";
 import router from "./router.js";
 import Lenis from "lenis";
 import { MotionPlugin } from "@vueuse/motion";
+import Clarity from "./plugins/clarity.js";
 
 const app = createApp(App);
 
@@ -21,6 +22,7 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
+app.use(Clarity);
 app.use(MotionPlugin);
 app.use(router);
 app.mount("#app");
