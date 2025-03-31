@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 import { clsx } from "clsx";
-import { computed, withDefaults, defineProps } from "vue";
+import { computed } from "vue";
 
 interface BorderBeamProps {
   class?: string;

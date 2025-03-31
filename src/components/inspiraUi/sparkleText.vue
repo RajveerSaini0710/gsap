@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, defineProps, withDefaults } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 
 interface Sparkle {
   id: string;

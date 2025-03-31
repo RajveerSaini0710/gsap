@@ -14,13 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import {
-  computed,
-  type HTMLAttributes,
-  onMounted,
-  ref,
-  withDefaults,
-} from "vue";
+import { computed, type HTMLAttributes, onMounted, ref } from "vue";
 import { clsx as cn } from "clsx";
 
 const props = withDefaults(
